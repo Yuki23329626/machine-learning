@@ -8,24 +8,29 @@ x = np.linspace(-3, 3, 20)
 y = 2*x+s
 baseLine = 2*x+0
 
-#Plot Gaussian Noise
-plt.subplot(1,1,1);
+# #Plot Gaussian Noise
+# plt.subplot(1,1,1);
 plt.xlim(-3,3)
 plt.ylim(-15,30)
-plt.plot(x, y, 'ro', x, baseLine)
+# plt.plot(x, y, 'ro', x, baseLine)
 
-plt.show()
+# plt.show()
 
 # create dummy data for training
-x_values = [i for i in range(11)]
+x_values = [x]
 x_train = np.array(x_values, dtype=np.float32)
 x_train = x_train.reshape(-1, 1)
 
-y_values = [2*i + 1 for i in x_values]
+y_values = [y]
 y_train = np.array(y_values, dtype=np.float32)
 y_train = y_train.reshape(-1, 1)
 
+import random
+selected_points = np.arange(20)
+random.shuffle(selected_points)
 
+plt.plot(x_train, y_train, x_train, baseLine)
+plt.show()
 
 ##Plot Gaussian Distribution
 #plt.subplot(1,2,2);
