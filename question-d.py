@@ -62,8 +62,6 @@ noise = np.random.normal(mu, sigma, size) #Create Gaussian Noise
 
 y = 2*x + noise
 
-ax.scatter (x, y, c='k')
-
 x = np.reshape( np.append( x, np.ones(size)), (2, size)).T
 x_training, x_testing, y_training, y_test = train_test_split(x, y, test_size=0.25)
 
