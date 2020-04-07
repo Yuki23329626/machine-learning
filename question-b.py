@@ -19,8 +19,8 @@ def calculate_error_L1 ( x_training, y_training, x_valid, y_valid, sum_training,
     error_testing = abs((x_valid.dot(wlin) - y_valid).sum()/sum_valid)
     return  wlin, error_training, error_testing
 
-def calculate_error_L2 ( x_training, y_training, x_valid, y_valid, sum_training, sum_valid):
-    wlin = ridge_regression( x_training, y_training, x_valid, y_valid, sum_training, sum_valid)
+def calculate_error_L2 ( x_training, y_training, x_valid, y_valid, sum_training, sum_valid, lamda):
+    wlin = ridge_regression( x_training, y_training, x_valid, y_valid, sum_training, sum_valid, lamda)
     error_training = abs((x_training.dot(wlin) - y_training).sum()/sum_training)
     error_testing = abs((x_valid.dot(wlin) - y_valid).sum()/sum_valid)
     return  wlin, error_training, error_testing

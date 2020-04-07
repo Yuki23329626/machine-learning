@@ -19,8 +19,8 @@ def calculate_error_L1 ( x_training, y_training, x_valid, y_valid, sum_training,
     error_testing = abs((x_valid.dot(wlin) - y_valid).sum()/sum_valid)
     return  wlin, error_training, error_testing
 
-def calculate_error_L2 ( x_training, y_training, x_valid, y_valid, sum_training, sum_valid):
-    wlin = ridge_regression( x_training, y_training, x_valid, y_valid, sum_training, sum_valid)
+def calculate_error_L2 ( x_training, y_training, x_valid, y_valid, sum_training, sum_valid, lamda):
+    wlin = ridge_regression( x_training, y_training, x_valid, y_valid, sum_training, sum_valid, lamda)
     error_training = abs((x_training.dot(wlin) - y_training).sum()/sum_training)
     error_testing = abs((x_valid.dot(wlin) - y_valid).sum()/sum_valid)
     return  wlin, error_training, error_testing
@@ -81,7 +81,7 @@ print ("\n--Degree 5--")
 print ("Training error: " , error_training_degree5)
 print ("Leave One out: " ,leave_one_out(x_training_degree5, y_training))
 print ("Five Fold Error: " ,five_fold(x_training_degree5, y_training))
-print ("Testing error: " , error_training_degree5)
+print ("Testing error: " , error_testing_degree5)
 
 y_degree5=0
 for i in range (0, 6):
