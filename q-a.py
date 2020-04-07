@@ -1,6 +1,6 @@
 import numpy as np
-import random
 import matplotlib.pyplot as plt
+import random
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import KFold
 from sklearn.model_selection import LeaveOneOut
