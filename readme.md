@@ -5,7 +5,7 @@
 系統環境: Ubuntu 16.04  
 套件管理工具: anaconda  
 python: 3.7  
-需安裝之套件包: numpy, matplotlib, sklearn  
+需安裝之套件包: numpy, matplotlib, scikit-learn  
   
 ## 1、執行程式  
   
@@ -19,10 +19,10 @@ question-e.py
 
 ```bash  
 conda create -n pytorch python=3  
+conda activate pytorch  
 conda install numpy  
 conda install matplotlib  
-conda install sklearn  
-conda activate pytorch  
+conda install scikit-learn  
 python [file_name.py]  
 ```
 

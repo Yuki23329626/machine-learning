@@ -115,7 +115,7 @@ for i in range (0, 15):
 
 ax.plot (x_line, y_degree5 , 'r', label='degree 5')
 ax.plot (x_line, y_degree10, 'g', label='degree 10' )
-ax.plot (x_line, y_degree14, 'b', label='degree 15' )
+ax.plot (x_line, y_degree14, 'b', label='degree 14' )
 
 legend = ax.legend(loc='upper center', shadow=True, fontsize='x-large')
 
