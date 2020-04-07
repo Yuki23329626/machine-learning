@@ -60,7 +60,7 @@ mu, sigma = 0, 0.04 # mean and standard deviation
 noise = np.random.normal(mu, sigma, 20) #Create Gaussian Noise
 
 y = np.sin(2*np.pi*x) + noise
-ax.scatter (x, y_training, c='k')
+ax.scatter (x, y, c='c')
 
 x = np.reshape( np.append( x, np.ones(20)), (2, 20)).T
 x_training, x_test, y_training, y_test = train_test_split(x, y, test_size=0.25)

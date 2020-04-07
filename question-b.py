@@ -81,7 +81,7 @@ print ("\n--Degree 5--")
 print ("Training error: " , error_training_degree5)
 print ("Leave One out: " ,leave_one_out(x_training_degree5, y_training))
 print ("Five Fold Error: " ,five_fold(x_training_degree5, y_training))
-print ("Testing error: " , error_training_degree5)
+print ("Testing error: " , error_testing_degree5)
 
 y_degree5=0
 for i in range (0, 6):

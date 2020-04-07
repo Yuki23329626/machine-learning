@@ -81,7 +81,7 @@ print ("\n--Degree 5--")
 print ("Training error: " , error_training_degree14)
 print ("Leave One out: " ,leave_one_out(x_training_degree14, y_training))
 print ("Five Fold Error: " ,five_fold(x_training_degree14, y_training))
-print ("Testing error: " , error_training_degree14)
+print ("Testing error: " , error_testing_degree14)
 
 y_degree_m1=0
 for i in range (0, 15):
@@ -106,7 +106,7 @@ print ("\n--Degree 5--")
 print ("Training error: " , error_training_degree14)
 print ("Leave One out: " ,leave_one_out(x_training_degree14, y_training))
 print ("Five Fold Error: " ,five_fold(x_training_degree14, y_training))
-print ("Testing error: " , error_training_degree14)
+print ("Testing error: " , error_testing_degree14)
 
 y_degree_m2=0
 for i in range (0, 15):
@@ -132,7 +132,7 @@ print ("\n--Degree 5--")
 print ("Training error: " , error_training_degree14)
 print ("Leave One out: " ,leave_one_out(x_training_degree14, y_training))
 print ("Five Fold Error: " ,five_fold(x_training_degree14, y_training))
-print ("Testing error: " , error_training_degree14)
+print ("Testing error: " , error_testing_degree14)
 
 y_degree_m3=0
 for i in range (0, 15):
