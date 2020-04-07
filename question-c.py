@@ -51,6 +51,7 @@ def generator_x (x_training, x_test, p_st, p_end, s_trn, s_tst):
        x_test = np.hstack(((x_test[:,-2]**i).reshape(s_tst,1) ,x_test))
     return x_training , x_test
 
+fig, ax = plt.subplots()
 
 x = np.linspace(0, 1, 20)
 y = np.zeros((20,1))
@@ -59,6 +60,7 @@ mu, sigma = 0, 0.04 # mean and standard deviation
 noise = np.random.normal(mu, sigma, 20) #Create Gaussian Noise
 
 y = np.sin(2*np.pi*x) + noise
+ax.scatter (x, y_training, c='k')
 
 x = np.reshape( np.append( x, np.ones(20)), (2, 20)).T
 x_training, x_test, y_training, y_test = train_test_split(x, y, test_size=0.25)
@@ -70,7 +72,6 @@ wlin, error_training, error_testing = calculate_error_L1 (x_training, y_training
 x_line = np.linspace (0, 1 ,1000)
 y_line = x_line * wlin[0] + wlin[1]
 
-fig, ax = plt.subplots()
 
 print ("\nQuestion c:" )
 

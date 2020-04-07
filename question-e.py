@@ -51,6 +51,8 @@ def generator_x (x_training, x_testing, p_st, p_end, s_trn, s_tst):
        x_testing = np.hstack(((x_testing[:,-2]**i).reshape(s_tst,1) ,x_testing))
     return x_training , x_testing
 
+fig, ax = plt.subplots()
+
 size = 20
 lamda = 0
 x = np.linspace(0, 1, size)
@@ -61,6 +63,8 @@ noise = np.random.normal(mu, sigma, size) #Create Gaussian Noise
 
 y = 2*x + noise
 
+ax.scatter(x, y, c='c')
+
 x = np.reshape( np.append( x, np.ones(size)), (2, size)).T
 x_training, x_testing, y_training, y_test = train_test_split(x, y, test_size=0.25)
 
@@ -70,8 +74,6 @@ wlin, error_training, error_testing = calculate_error_L1 (x_training, y_training
 #### use to plot the fucntion
 x_line = np.linspace (0, 1 ,2000)
 y_line = x_line * wlin[0] + wlin[1]
-
-fig, ax = plt.subplots()
 
 print ("\nQuestion d λ=0:" )
 

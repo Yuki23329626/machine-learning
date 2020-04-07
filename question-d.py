@@ -51,6 +51,8 @@ def generator_x (x_training, x_testing, p_st, p_end, s_trn, s_tst):
        x_testing = np.hstack(((x_testing[:,-2]**i).reshape(s_tst,1) ,x_testing))
     return x_training , x_testing
 
+fig, ax = plt.subplots()
+
 size = 60
 x = np.linspace(-3, 3, size)
 y = np.zeros((size,1))
@@ -59,6 +61,8 @@ mu, sigma = 0, 1 # mean and standard deviation
 noise = np.random.normal(mu, sigma, size) #Create Gaussian Noise
 
 y = 2*x + noise
+
+ax.scatter (x, y, c='k')
 
 x = np.reshape( np.append( x, np.ones(size)), (2, size)).T
 x_training, x_testing, y_training, y_test = train_test_split(x, y, test_size=0.25)
@@ -70,9 +74,8 @@ wlin, error_training, error_testing = calculate_error_L1 (x_training, y_training
 x_line = np.linspace (-3, 3 ,2000)
 y_line = x_line * wlin[0] + wlin[1]
 
-fig, ax = plt.subplots()
-
-print ("\nQuestion d m = 60:" )
+print ("\nQuestion d:" )
+print("\nm = 60:")
 
 x_training_degree14 ,x_testing_degree14 = generator_x (x_training, x_testing, 1 , 14, x_training.shape[0], x_testing.shape[0])
 wlin_degree14, error_training_degree14, error_testing_degree14 = calculate_error_L1 (x_training_degree14, y_training, x_testing_degree14, y_test, x_training.shape[0], x_testing.shape[0])
@@ -98,6 +101,7 @@ y = 2*x + noise
 x = np.reshape( np.append( x, np.ones(size)), (2, size)).T
 x_training, x_testing, y_training, y_test = train_test_split(x, y, test_size=0.25)
 
+print("\nm = 160:")
 x_training_degree14 ,x_testing_degree14 = generator_x (x_training, x_testing, 1 , 14, x_training.shape[0], x_testing.shape[0])
 wlin_degree14, error_training_degree14, error_testing_degree14 = calculate_error_L1 (x_training_degree14, y_training, x_testing_degree14, y_test, x_training.shape[0], x_testing.shape[0])
 print ("\n--Degree 5--")
@@ -123,6 +127,7 @@ y = 2*x + noise
 x = np.reshape( np.append( x, np.ones(size)), (2, size)).T
 x_training, x_testing, y_training, y_test = train_test_split(x, y, test_size=0.25)
 
+print("\nm = 320:")
 x_training_degree14 ,x_testing_degree14 = generator_x (x_training, x_testing, 1 , 14, x_training.shape[0], x_testing.shape[0])
 wlin_degree14, error_training_degree14, error_testing_degree14 = calculate_error_L1 (x_training_degree14, y_training, x_testing_degree14, y_test, x_training.shape[0], x_testing.shape[0])
 print ("\n--Degree 5--")
