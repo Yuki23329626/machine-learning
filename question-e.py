@@ -171,7 +171,7 @@ for i in range (0, 15):
 ax.plot (x_line, y_degree_m1, 'r', label='λ=0' )
 ax.plot (x_line, y_degree_m2, 'g', label='λ=0.001/m' )
 ax.plot (x_line, y_degree_m3, 'b', label='λ=1/m' )
-ax.plot (x_line, y_degree_m3, 'k', label='λ=1000/m' )
+ax.plot (x_line, y_degree_m4, 'k', label='λ=1000/m' )
 
 legend = ax.legend(loc='upper left', shadow=True, fontsize='x-large')
 
