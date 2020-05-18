@@ -58,11 +58,12 @@ def make_train_loader(cfg):
     #print(len(label_set))   # 3
     #print(label_set)	# {'C', 'A', 'B'}
 
-    # 構建一個編號與名稱對應的字典，以後輸出的數字要變成名字的時候用：
+    # 構建一個編號與名稱對應的dictionary，以後輸出的數字要變成名字的時候用：
     label_3_list = list(label_set)
     dic = {}
     for i in range(3):
         dic[label_3_list[i]] = i
+    print(dic)
 
     # 2)處理csv中image_id那一列，分割成兩段：裡面就是圖片的路徑
     file = df["image_id"].values
@@ -70,8 +71,11 @@ def make_train_loader(cfg):
 
     import os
     file = [i+"" for i in file]
+    # print(file[0]) = "00002.jpg"
     file = [os.path.join("./datasets/C1-P1_Train/2",i) for i in file]
+    # print(file[0]) = "./datasets/C1-P1_Train/2/00002.jpg"
     file_train = file[:4480]
+    #print(file_train)
     file_valid = file[4480:]
     #print(len(file_train))	# 5600
     #print(file_train)	# 圖片路徑
@@ -86,6 +90,7 @@ def make_train_loader(cfg):
     number = []
     for i in range(5600):
         number.append(dic[label_np[i]])
+    print("number0 = " , number[0] , "label_np[0]=" , label_np[0] , "dic[label_np[i]]=" , dic[label_np[i]])
     number = np.array(number) 
     number_train = number[:4480]
     number_valid = number[4480:]
@@ -171,10 +176,11 @@ def make_train_loader(cfg):
 
     train_idx, valid_idx = indices[split:], indices[:split]
     train_sampler = SubsetRandomSampler(train_idx)
+    print(train_sampler)
     valid_sampler = SubsetRandomSampler(valid_idx)
 
     train_loader = DataLoader(trainset(), batch_size=batch_size, num_workers=num_workers, sampler=train_sampler)
-    valid_loader = DataLoader(validset(), batch_size=batch_size, num_workers=num_workers, sampler=valid_sampler)
+    valid_loader = DataLoader(trainset(), batch_size=batch_size, num_workers=num_workers, sampler=valid_sampler)
     
     return train_loader, valid_loader
 
