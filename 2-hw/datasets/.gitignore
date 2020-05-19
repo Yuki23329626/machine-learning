@@ -1,5 +1,2 @@
-__pycache__
-Cat_Dog_data/
-weights/
-C1-P1_Dev/
-C1-P1_Train/
+C1-P1_Dev/1/*
+C1-P1_Train/2/*
