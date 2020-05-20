@@ -17,5 +17,5 @@ PATH:
   TEST_SET: "../hw2_dev/datasets/C1-P1_Dev"
 
 DEVICE:
-  GPU: 1
-  CUDA: False
+  GPU: 0
+  CUDA: True
