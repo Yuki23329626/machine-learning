@@ -1,6 +1,6 @@
 MODEL:
   OUTPUT_PATH: "../2-hw/weights/model.pth"
-  LR: 1e-3
+  LR: 1e-5
   EPOCH: 50
 
 DATA:
