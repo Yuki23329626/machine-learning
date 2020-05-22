@@ -4,7 +4,7 @@ import urllib.request
 import os
 
 # 存圖位置
-local_path = r'D:/machine-learning/test/imgs'
+local_path = r'D:/machine-learning/test/landscape_imgs'
 # 爬取頁面網址 
 url = 'https://pic.sogou.com/pics?query=%EFL%BE%B0&di=2&_asf=pic.sogou.com&w=05009900'  
   
@@ -31,7 +31,7 @@ for i in range(100):
     js = "document.documentElement.scrollTop=%d" % pos  
     driver.execute_script(js)  
     time.sleep(1)
-    
+
     for element in driver.find_elements_by_xpath(xpath):
         try:
             img_url = element.get_attribute('src')
@@ -43,7 +43,7 @@ for i in range(100):
                 # print(img_url)
                 ext = img_url.split('/')[-1]
                 # print(ext)
-                filename = str(m) + 'landscape' + '_' + ext +'.jpg'
+                filename = str(m) + '_' + 'landscape' + '_' + ext +'.jpg'
                 print(filename)
                 
                 # 保存圖片
