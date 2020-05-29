@@ -26,6 +26,10 @@ python: 3.7
 例如手動把圖案中不是芒果的部分去除  
 用這種方式，來輸出只含有芒果的部分，再拿去做等級分類  
 
+reference:  
+1. 圖案去背景 Mask CNN:  
+  https://matters.news/@tony_guo/%E5%88%A9%E7%94%A8mask-rcnn%E7%82%BA%E5%9C%96%E7%89%87%E5%8E%BB%E9%99%A4%E8%83%8C%E6%99%AF-zdpuAsEDBdrVrTawVqqeUuiJhCAAVUVdWvNZsxGTi2q3jXA1L  
+
 ```bash  
 python image-downloader  
 ```  

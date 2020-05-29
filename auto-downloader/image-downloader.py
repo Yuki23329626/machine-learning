@@ -26,7 +26,7 @@ driver.get(url)
 # 模擬滾動視窗瀏覽更多圖片
 pos = 0  
 m = 0 # 圖片編號 
-for i in range(100):  
+for i in range(100):  # 100 的話有 2393 張好像是極限了
     pos += i*500 # 每次下滾500(不知道這個單位是甚麼)  
     js = "document.documentElement.scrollTop=%d" % pos  
     driver.execute_script(js)  
