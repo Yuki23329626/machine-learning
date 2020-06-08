@@ -3,10 +3,12 @@ import matplotlib.pyplot as plt
 from scipy.misc import imresize
 
 # root path depends on your computer
-root = '/home/nxshen/machine-learning/3-hw/data/'
-save_root = '/home/nxshen/machine-learning/3-hw/resized_celebA/'
+root = '/home/applyACC/lab401c2/lab401c21/nxshen/machine-learning/3-hw/data/'
+save_root = '/home/applyACC/lab401c2/lab401c21/nxshen/machine-learning/3-hw/resized_celebA/'
 resize_size = 64
 
+if not os.path.isdir(save_root):
+    save_root = '/home/nxshen/machine-learning/3-hw/resized_celebA/'
 if not os.path.isdir(save_root):
     os.mkdir(save_root)
 if not os.path.isdir(save_root + 'celebA'):
