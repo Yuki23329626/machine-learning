@@ -137,7 +137,7 @@ def show_train_hist(hist, show = False, save = False, path = 'Train_hist.png'):
 # training parameters
 batch_size = 128
 lr = 0.0002
-train_epoch = 10
+train_epoch = 200
 
 # data_loader
 img_size = 64
