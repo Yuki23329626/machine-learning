@@ -160,7 +160,7 @@ transform = transforms.Compose([
         transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
 ])
 
-data_dir = '/home/nxshen/machine-learning/3-hw/resized_celebA/celebA'          # this path depends on your computer
+data_dir = '/home/nxshen/machine-learning/3-hw/resized_celebA/'          # this path depends on your computer
 
 dset = datasets.ImageFolder(data_dir, transform)
 train_loader = torch.utils.data.DataLoader(dset, batch_size=128, shuffle=True)
