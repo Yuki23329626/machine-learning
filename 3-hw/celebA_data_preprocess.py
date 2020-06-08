@@ -4,7 +4,7 @@ from scipy.misc import imresize
 
 # root path depends on your computer
 root = '/home/nxshen/machine-learning/3-hw/data/'
-save_root = 'data/resized_celebA/'
+save_root = '/home/nxshen/machine-learning/3-hw/resized_celebA/'
 resize_size = 64
 
 if not os.path.isdir(save_root):
