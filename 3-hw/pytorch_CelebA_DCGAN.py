@@ -10,6 +10,8 @@ import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.autograd import Variable
 
+torch.cuda.set_device(1)
+
 # G(z)
 class generator(nn.Module):
     # initializers
