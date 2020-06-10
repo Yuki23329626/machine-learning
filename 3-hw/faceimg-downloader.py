@@ -13,7 +13,7 @@ with open('pubfig.txt') as object_pubfig:
       li=line.strip()
       if not li.startswith("#"):
         #print(line.split("\t")[2])
-        filename = count + '.jpg'
+        filename = "%06d" % count + '.jpg'
         print(filename)
         # 保存圖片
         # urllib.request.urlretrieve(line.split("\t")[2], os.path.join(path , filename))
