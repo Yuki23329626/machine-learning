@@ -22,4 +22,5 @@ with open('pubfig.txt') as object_pubfig:
           count += 1
         except HTTPError as httpErr:
           print(httpErr)
+          pass
 
