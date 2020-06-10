@@ -21,6 +21,6 @@ with open('pubfig.txt') as object_pubfig:
           urllib.request.urlretrieve(line.split("\t")[2], os.path.join(path , filename))
           count += 1
         except HTTPError as httpErr:
-          print(httpErr)
+          #print(httpErr)
           pass
 
