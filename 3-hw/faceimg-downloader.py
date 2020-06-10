@@ -16,6 +16,10 @@ with open('pubfig.txt') as object_pubfig:
         filename = ("%06d" % count) + '.jpg'
         print(filename)
         # 保存圖片
-        urllib.request.urlretrieve(line.split("\t")[2], os.path.join(path , filename))
-        count += 1
+        try:
+          urllib.request.urlretrieve(line.split("\t")[2], os.path.join(path , filename))
+          count += 1
+        except BaseException:
+          print("cannot download image")
+          break
 
