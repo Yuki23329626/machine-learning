@@ -20,7 +20,7 @@ with open('pubfig.txt') as object_pubfig:
         try:
           urllib.request.urlretrieve(line.split("\t")[2], os.path.join(path , filename))
           count += 1
-        except:
-          #print(httpErr)
+        except e:
+          print(e)
           pass
 
