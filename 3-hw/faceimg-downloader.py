@@ -6,5 +6,7 @@ path = 'data_pubfig/'
 
 with open('pubfig.txt') as object_pubfig:
     for line in object_pubfig:
-      print(line.split("\t")[2])
+      li=line.strip()
+      if not li.startswith("#"):
+        print(line.split("\t")[2])
 
