@@ -1,7 +1,7 @@
 
 import urllib.request
 import os
-from urllib.error import HTTPError
+from urllib.error import URLError
 
 # Public Figures Face Database(哥倫比亞大學公眾人物臉部數據庫)
 
@@ -20,7 +20,7 @@ with open('pubfig.txt') as object_pubfig:
         try:
           urllib.request.urlretrieve(line.split("\t")[2], os.path.join(path , filename))
           count += 1
-        except e:
-          print(e)
+        except URLError:
+          print(URLError)
           pass
 
