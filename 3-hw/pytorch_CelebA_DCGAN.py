@@ -170,7 +170,7 @@ if (temp.shape[0] != img_size) or (temp.shape[0] != img_size):
     sys.stderr.write('Error! image size is not 64 x 64! run \"celebA_data_preprocess.py\" !!!')
     sys.exit(1)
 
-mu = 0
+mu = np.zeros(64)
 sigma = np.eye(3)
 size_normal_distribution = (64, 64, 4)
 noise = np.random.multivariate_normal(mu, sigma, size_normal_distribution)
