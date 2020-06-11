@@ -174,6 +174,7 @@ mu = 0
 sigma = 1
 size_normal_distribution = (64, 64, 4)
 noise = np.random.normal(mu, sigma, size_normal_distribution)
+print(temp)
 print(noise)
 
 temp = temp + noise
