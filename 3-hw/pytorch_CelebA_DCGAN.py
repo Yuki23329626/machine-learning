@@ -171,7 +171,7 @@ if (temp.shape[0] != img_size) or (temp.shape[0] != img_size):
     sys.exit(1)
 
 mu, sigma = 0, 1
-noise = numpy.random.normal(mu, sigma, 64*64) #Create Gaussian Noise
+noise = numpy.random.normal(mu, sigma, 64,64,4) #Create Gaussian Noise
 
 temp = temp + noise
 
