@@ -9,7 +9,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.autograd import Variable
-import numpy
+import numpy as np
 
 #torch.cuda.set_device(1)
 
@@ -170,8 +170,11 @@ if (temp.shape[0] != img_size) or (temp.shape[0] != img_size):
     sys.stderr.write('Error! image size is not 64 x 64! run \"celebA_data_preprocess.py\" !!!')
     sys.exit(1)
 
-mu, sigma = 0, 1
-noise = numpy.random.normal(mu, sigma, 64,64,4) #Create Gaussian Noise
+mu = 0
+sigma = np.eye(3)
+size_normal_distribution = (64, 64, 4)
+noise = np.random.multivariate_normal(mu, sigma, size_normal_distribution)
+print(noise)
 
 temp = temp + noise
 
