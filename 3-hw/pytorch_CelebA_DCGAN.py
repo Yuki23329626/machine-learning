@@ -139,7 +139,7 @@ def show_train_hist(hist, show = False, save = False, path = 'Train_hist.png'):
 # training parameters
 batch_size = 128
 lr = 0.0002
-train_epoch = 0
+train_epoch = 200
 
 # data_loader
 img_size = 64
@@ -168,6 +168,11 @@ temp = plt.imread(train_loader.dataset.imgs[0][0])
 if (temp.shape[0] != img_size) or (temp.shape[0] != img_size):
     sys.stderr.write('Error! image size is not 64 x 64! run \"celebA_data_preprocess.py\" !!!')
     sys.exit(1)
+
+mu, sigma = 0, 1
+noise = numpy.random.normal(mu, sigma, 64*64) #Create Gaussian Noise
+
+temp = temp + noise
 
 # network
 G = generator(128)
