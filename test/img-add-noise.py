@@ -7,7 +7,7 @@ img = cv2.imread(img_path)
 mean = 0
 var = 10
 sigma = var ** 0.5
-gaussian = np.random.normal(mean, sigma, (224, 224)) #  np.zeros((224, 224), np.float32)
+gaussian = np.random.normal(mean, sigma, (218, 178)) #  np.zeros((224, 224), np.float32)
 
 noisy_image = np.zeros(img.shape, np.float32)
 
