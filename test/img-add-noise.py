@@ -6,7 +6,7 @@ img_path = "data/000001.png"
 img = plt.imread(img_path)
 mu = 0
 sigma = 1
-# gaussian = np.random.normal(mean, sigma, (233, 178)) #  np.zeros((224, 224), np.float32)
+normal_distribution_noise = np.random.normal(mean, sigma, img.shape[:-1]) #  np.zeros((224, 224), np.float32)
 
 print(img)
-print(img.shape[:-1])
+print(normal_distribution_noise)
