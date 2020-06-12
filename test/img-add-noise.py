@@ -9,5 +9,5 @@ sigma = 1
 normal_distribution_noise = np.random.normal(mu, sigma, img.shape[:-1]) #  np.zeros((224, 224), np.float32)
 
 print(img)
-print(normal_distribution_noise.max)
-print(normal_distribution_noise.min)
+print(np.max(normal_distribution_noise))
+print(np.min(normal_distribution_noise))
