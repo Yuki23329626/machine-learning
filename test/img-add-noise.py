@@ -1,9 +1,9 @@
 import numpy as np
-import cv2
+import matplotlib.pyplot as plt
 
 img_path = "data/000001.png"
 
-img = cv2.imread(img_path)
+img = plt.imread(img_path)
 mean = 0
 var = 10
 sigma = var ** 0.5
@@ -18,11 +18,11 @@ else:
     noisy_image[:, :, 1] = img[:, :, 1] + gaussian
     noisy_image[:, :, 2] = img[:, :, 2] + gaussian
 
-cv2.normalize(noisy_image, noisy_image, 0, 255, cv2.NORM_MINMAX, dtype=-1)
+plt.normalize(noisy_image, noisy_image, 0, 255, plt.NORM_MINMAX, dtype=-1)
 noisy_image = noisy_image.astype(np.uint8)
 
-cv2.imshow("img", img)
-cv2.imshow("gaussian", gaussian)
-cv2.imshow("noisy", noisy_image)
+plt.show("img", img)
+plt.show("gaussian", gaussian)
+plt.show("noisy", noisy_image)
 
-cv2.waitKey(0)
+plt.waitKey(0)
