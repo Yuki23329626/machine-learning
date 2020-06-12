@@ -7,7 +7,7 @@ img = plt.imread(img_path)
 mu = 0
 sigma = 1
 noise = np.random.normal(mu, sigma, img.shape[:-1]) #  np.zeros((224, 224), np.float32)
-denominator = np.max(normal_distribution_noise) - np.min(normal_distribution_noise)
+denominator = np.max(noise) - np.min(noise)
 
 # print(img)
 # print(np.max(normal_distribution_noise))
