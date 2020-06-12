@@ -17,5 +17,5 @@ noise_percent = noise/denominator
 
 fake_img = np.clip(img + noise_percent, 0, 1)
 
-plt.imshow(img, "origin", 1, 2, 1)
-plt.imshow(img, "normal distribution", 1, 2, 2)
+plt.show(img, "origin", 1, 2, 1)
+plt.show(img, "normal distribution", 1, 2, 2)
