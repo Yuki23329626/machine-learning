@@ -5,6 +5,7 @@ logs/
 results/
 temp/
 test/
+mask_rcnn_coco.h5
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
