@@ -96,7 +96,7 @@ model.load_weights(COCO_MODEL_PATH, by_name=True)
 class_names = ['BG', 'mango']
 # Load a random image from the images folder
 file_names = next(os.walk(IMAGE_DIR))[2]
-image = skimage.io.imread("samples/trinmy/myinfo/pic/00004.png")
+image = skimage.io.imread("/home/nxshen/machine-learning/2-hw/datasets/C1-P1_Train/2/00004.jpg")
  
 a=datetime.now()
 # Run detection
