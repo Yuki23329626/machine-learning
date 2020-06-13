@@ -93,7 +93,7 @@ model.load_weights(COCO_MODEL_PATH, by_name=True)
 # COCO Class names
 # Index of the class in the list is its ID. For example, to get ID of
 # the teddy bear class, use: class_names.index('teddy bear')
-class_names = ['BG', 'person']
+class_names = ['BG', 'mango']
 # Load a random image from the images folder
 file_names = next(os.walk(IMAGE_DIR))[2]
 image = skimage.io.imread("samples/trinmy/myinfo/pic/00004.png")
