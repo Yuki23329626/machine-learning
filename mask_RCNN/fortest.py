@@ -96,7 +96,7 @@ model.load_weights(COCO_MODEL_PATH, by_name=True)
 class_names = ['BG', 'mango']
 # Load a random image from the images folder
 file_names = next(os.walk(IMAGE_DIR))[2]
-image = skimage.io.imread("samples/trinmy/myinfo/pic/00005.png")
+image = skimage.io.imread("/home/nxshen/machine-learning/2-hw/datasets/C1-P1_Train/2/00004.jpg")
  
 a=datetime.now()
 # Run detection
@@ -105,4 +105,4 @@ b=datetime.now()
 # Visualize results
 print("shijian",(b-a).seconds)
 r = results[0]
-visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'],class_names, r['scores'])
+visualize.display_instances(image, r['rois'], r['masks'], 0,class_names, r['scores'])
