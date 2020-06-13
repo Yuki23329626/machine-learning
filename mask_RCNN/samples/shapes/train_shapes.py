@@ -423,6 +423,7 @@ for image_id in image_ids:
     APs.append(AP)
     
 print("mAP: ", np.mean(APs))
+plt.show()
 
 
 # In[ ]:
