@@ -139,6 +139,7 @@ class ShapesDataset(utils.Dataset):
         # list of shapes sizes and locations). This is more compact than
         # actual images. Images are generated on the fly in load_image().
         for i in range(count):
+            print("\n\n==========\n\ncount: ", i,"\n\n==========\n\n")
             bg_color, shapes = self.random_image(height, width)
             self.add_image("shapes", image_id=i, path=None,
                            width=width, height=height,
