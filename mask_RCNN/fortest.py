@@ -28,7 +28,7 @@ from mrcnn import visualize
 MODEL_DIR = os.path.join(ROOT_DIR, "logs")
  
 # Local path to trained weights file
-COCO_MODEL_PATH = os.path.join(MODEL_DIR ,"shapes20200613T1057/mask_rcnn_shapes_0001.h5")
+COCO_MODEL_PATH = os.path.join(MODEL_DIR ,"shapes20200613T1057/mask_rcnn_shapes_0010.h5")
 # Download COCO trained weights from Releases if needed
 if not os.path.exists(COCO_MODEL_PATH):
     utils.download_trained_weights(COCO_MODEL_PATH)
@@ -96,7 +96,7 @@ model.load_weights(COCO_MODEL_PATH, by_name=True)
 class_names = ['BG', 'mango']
 # Load a random image from the images folder
 file_names = next(os.walk(IMAGE_DIR))[2]
-image = skimage.io.imread("samples/trinmy/myinfo/pic/00004.png")
+image = skimage.io.imread("samples/trinmy/myinfo/pic/00005.png")
  
 a=datetime.now()
 # Run detection
@@ -105,4 +105,4 @@ b=datetime.now()
 # Visualize results
 print("shijian",(b-a).seconds)
 r = results[0]
-visualize.display_instances(image, r['rois'], r['masks'], 0,class_names, r['scores'])
+visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'],class_names, r['scores'])
