@@ -252,6 +252,7 @@ class ShapesDataset(utils.Dataset):
 # Training dataset
 dataset_train = ShapesDataset()
 dataset_train.load_shapes(500, config.IMAGE_SHAPE[0], config.IMAGE_SHAPE[1])
+print("\n\n==========\n\nconfig.IMAGE_SHAPE[0]",config.IMAGE_SHAPE[0],"\n\n==========\n\n")
 dataset_train.prepare()
 
 # Validation dataset
