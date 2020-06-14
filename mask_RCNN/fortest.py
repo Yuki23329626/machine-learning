@@ -105,4 +105,4 @@ b=datetime.now()
 # Visualize results
 print("shijian",(b-a).seconds)
 r = results[0]
-visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'],class_names, r['scores'])
+visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'],class_names, r['scores'], show_mask=False)
