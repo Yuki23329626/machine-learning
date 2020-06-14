@@ -177,7 +177,7 @@ class ShapesDataset(utils.Dataset):
             boxes.append([y-s, x-s, y+s, x+s])
         print(boxes)
         # Apply non-max suppression wit 0.3 threshold to avoid
-        # shapes covering each other
+        # shapes covering each other 避免 shapes 互相覆蓋，本來是用在最後的
         keep_ixs = utils.non_max_suppression(np.array(boxes), np.arange(N), 0.3)
         print(keep_ixs)
         shapes = [s for i, s in enumerate(shapes) if i in keep_ixs]

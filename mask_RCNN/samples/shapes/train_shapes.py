@@ -253,8 +253,9 @@ class ShapesDataset(utils.Dataset):
 
 # Training dataset
 dataset_train = ShapesDataset()
+# 生成隨機的含任意形狀的 image
 dataset_train.load_shapes(500, config.IMAGE_SHAPE[0], config.IMAGE_SHAPE[1])
-print("\n\n==========\n\nconfig.IMAGE_SHAPE[0]",config.IMAGE_SHAPE[0],"\n\n==========\n\n")
+print("\n\n==========\n\nconfig.IMAGE_SHAPE[1]: ",config.IMAGE_SHAPE[1],"\n\n==========\n\n")
 dataset_train.prepare()
 
 # Validation dataset
