@@ -80,7 +80,7 @@ def apply_mask(image, mask, color, alpha=0.5):
     return image
 
 
-def display_instances(image, boxes, masks, class_ids, class_names, filestr,
+def display_instances(image, boxes, masks, class_ids, class_names, filestr, path_output
                       scores=None, title="",
                       figsize=(16, 16), ax=None,
                       show_mask=True, show_bbox=True,
@@ -171,7 +171,7 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr,
     if auto_show:
         plt.show()
     fig = ax.get_figure()
-    fig.savefig(filestr + ".jpg")
+    fig.savefig( path_output + filestr + ".jpg")
 
 
 def display_differences(image,

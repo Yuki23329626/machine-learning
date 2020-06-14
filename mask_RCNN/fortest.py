@@ -101,6 +101,7 @@ PATH_ORIGINAL_DATA = "../2-hw/datasets/C1-P1_Train/2/"
 imglist = os.listdir(PATH_ORIGINAL_DATA)
 count = len(imglist)
 print("count", count)
+PATH_OUTPUT_DATA = "data_manjgo/"
 
 for i in range(count):
   print("count: ", i)
@@ -117,4 +118,4 @@ b=datetime.now()
 # Visualize results
 print("shijian",(b-a).seconds)
 r = results[0]
-visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'], class_names, filestr, r['scores'], show_bbox=False, show_mask=True)
+visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'], class_names, filestr, PATH_OUTPUT_DATA, r['scores'], show_bbox=False, show_mask=True)
