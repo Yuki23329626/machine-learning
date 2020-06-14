@@ -9,7 +9,7 @@ import cv2
 import matplotlib
 import matplotlib.pyplot as plt
 
-ROOT_DIR = os.path.abspath("../")
+ROOT_DIR = os.path.abspath("../mask_RCNN/")
 
 # Import Mask RCNN
 sys.path.append(ROOT_DIR)  # To find local version of the library
