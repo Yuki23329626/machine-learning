@@ -101,7 +101,7 @@ PATH_ORIGINAL_DATA = "../2-hw/datasets/C1-P1_Train/2/"
 imglist = os.listdir(PATH_ORIGINAL_DATA)
 count = len(imglist)
 print("count", count)
-PATH_OUTPUT_DATA = "data_manjgo/"
+PATH_OUTPUT_DATA = "data_mango/"
 
 for i in range(count):
   print("count: ", i)
