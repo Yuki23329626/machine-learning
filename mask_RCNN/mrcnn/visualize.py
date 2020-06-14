@@ -73,7 +73,7 @@ def apply_mask(image, mask, color, alpha=0.5):
     """Apply the given mask to the image.
     """
     for c in range(3):
-        image[:, :, c] = np.where(mask == 0,# mask == 1
+        image[:, :, c] = np.where(mask == 1,
                                   image[:, :, c] *
                                   (1 - alpha) + alpha * color[c] * 255,
                                   image[:, :, c])
@@ -151,9 +151,8 @@ def display_instances(image, boxes, masks, class_ids, class_names,
         # Mask
         mask = masks[:, :, i]
         # print(mask)
-        print("color: ", color)
         if show_mask:
-            masked_image = apply_mask(masked_image, mask, color, alpha=1.0)
+            masked_image = apply_mask(masked_image, mask, color)
 
         # # 把邊框畫出來的東東
         # # Pad to ensure proper polygons for masks that touch image edges.
