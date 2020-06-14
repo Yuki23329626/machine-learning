@@ -100,16 +100,16 @@ class_names = ['BG', 'mango']
 PATH_ORIGINAL_DATA = "../2-hw/datasets/C1-P1_Train/2/"
 imglist = os.listdir(PATH_ORIGINAL_DATA)
 count = len(imglist)
-print("count", count)
-PATH_OUTPUT_DATA = "data_mango/"
+# print("count", count)
+# PATH_OUTPUT_DATA = "data_mango/"
 
 for i in range(count):
-  print("count: ", i)
+  # print("count: ", i)
   filestr = imglist[i].split(".")[0]
-  print("filestr: ", filestr)
+  # print("filestr: ", filestr)
 
 file_names = next(os.walk(IMAGE_DIR))[2]
-image = skimage.io.imread(PATH_ORIGINAL_DATA + "00005" + ".jpg")
+image = skimage.io.imread(PATH_ORIGINAL_DATA + filestr + ".jpg")
  
 a=datetime.now()
 # Run detection
