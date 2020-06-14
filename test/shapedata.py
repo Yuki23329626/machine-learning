@@ -175,6 +175,7 @@ class ShapesDataset(utils.Dataset):
             x, y, s = dims
 			# 產生的 box 的四個點
             boxes.append([y-s, x-s, y+s, x+s])
+        print(boxes)
         # Apply non-max suppression wit 0.3 threshold to avoid
         # shapes covering each other
         keep_ixs = utils.non_max_suppression(np.array(boxes), np.arange(N), 0.3)
