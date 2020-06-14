@@ -211,15 +211,15 @@ class ShapesDataset(utils.Dataset):
         * Shape dimensions: A tuple of values that define the shape size
                             and location. Differs per shape type.
         """
-        # Shape
+        # 隨機選擇一個形狀
         shape = random.choice(["square", "circle", "triangle"])
-        # Color
+        # 產生的形狀的顏色
         color = tuple([random.randint(0, 255) for _ in range(3)])
         # Center x, y
         buffer = 20
         y = random.randint(buffer, height - buffer - 1)
         x = random.randint(buffer, width - buffer - 1)
-        # Size
+        # Size = 20 ~ (高度整除4)
         s = random.randint(buffer, height//4)
         return shape, color, (x, y, s)
 
@@ -239,6 +239,7 @@ class ShapesDataset(utils.Dataset):
             shape, color, dims = self.random_shape(height, width)
             shapes.append((shape, color, dims))
             x, y, s = dims
+			# 產生的 box 的四個點
             boxes.append([y-s, x-s, y+s, x+s])
         # Apply non-max suppression wit 0.3 threshold to avoid
         # shapes covering each other
