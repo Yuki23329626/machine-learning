@@ -107,8 +107,10 @@ for i in range(count):
   # print("count: ", i)
   filestr = imglist[i].split(".")[0]
   # print("filestr: ", filestr)
+
   file_names = next(os.walk(IMAGE_DIR))[2]
   image = skimage.io.imread(PATH_ORIGINAL_DATA + filestr + ".jpg")
+ 
   a=datetime.now()
   # Run detection
   results = model.detect([image], verbose=1)
