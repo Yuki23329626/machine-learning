@@ -1,4 +1,4 @@
-import numpy.random
+import random
 
 N = random.randint(1, 4)
 
