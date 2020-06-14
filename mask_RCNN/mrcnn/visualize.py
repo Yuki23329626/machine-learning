@@ -169,7 +169,7 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
 
     ax.imshow(masked_image.astype(np.uint8))
     if auto_show:
-        plt.show()
+        # plt.show()
     fig = ax.get_figure()
     fig.savefig( path_output + filestr + ".jpg")
 

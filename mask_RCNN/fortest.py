@@ -107,15 +107,13 @@ for i in range(count):
   # print("count: ", i)
   filestr = imglist[i].split(".")[0]
   # print("filestr: ", filestr)
-
-file_names = next(os.walk(IMAGE_DIR))[2]
-image = skimage.io.imread(PATH_ORIGINAL_DATA + filestr + ".jpg")
- 
-a=datetime.now()
-# Run detection
-results = model.detect([image], verbose=1)
-b=datetime.now()
-# Visualize results
-print("shijian",(b-a).seconds)
-r = results[0]
-visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'], class_names, filestr, PATH_OUTPUT_DATA, r['scores'], show_bbox=False, show_mask=True)
+  file_names = next(os.walk(IMAGE_DIR))[2]
+  image = skimage.io.imread(PATH_ORIGINAL_DATA + filestr + ".jpg")
+  a=datetime.now()
+  # Run detection
+  results = model.detect([image], verbose=1)
+  b=datetime.now()
+  # Visualize results
+  print("shijian",(b-a).seconds)
+  r = results[0]
+  visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'], class_names, filestr, PATH_OUTPUT_DATA, r['scores'], show_bbox=False, show_mask=True)
