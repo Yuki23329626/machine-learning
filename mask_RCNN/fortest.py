@@ -95,6 +95,14 @@ model.load_weights(COCO_MODEL_PATH, by_name=True)
 # the teddy bear class, use: class_names.index('teddy bear')
 class_names = ['BG', 'mango']
 # Load a random image from the images folder
+
+# 基础设置
+PATH_ORIGINAL_DATA = "../2-hw/datasets/C1-P1_Train/2/"
+imglist = os.listdir(PATH_ORIGINAL_DATA)
+count = len(imglist)
+print("count", count)
+
+
 file_names = next(os.walk(IMAGE_DIR))[2]
 image = skimage.io.imread("/home/nxshen/machine-learning/2-hw/datasets/C1-P1_Train/2/00005.jpg")
  
