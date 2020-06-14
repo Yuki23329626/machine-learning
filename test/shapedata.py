@@ -181,6 +181,7 @@ class ShapesDataset(utils.Dataset):
         keep_ixs = utils.non_max_suppression(np.array(boxes), np.arange(N), 0.3)
         print(keep_ixs)
         shapes = [s for i, s in enumerate(shapes) if i in keep_ixs]
+        print(shapes)
         return bg_color, shapes
 
 config = ShapesConfig()
