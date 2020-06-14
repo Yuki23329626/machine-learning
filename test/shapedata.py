@@ -182,7 +182,6 @@ class ShapesDataset(utils.Dataset):
         return bg_color, shapes
 
 config = ShapesConfig()
-config.display()
 
 dataset_train = ShapesDataset()
 dataset_train.load_shapes(5, config.IMAGE_SHAPE[0], config.IMAGE_SHAPE[1])
