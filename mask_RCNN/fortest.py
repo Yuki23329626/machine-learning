@@ -108,7 +108,7 @@ for i in range(count):
   print("filestr: ", filestr)
 
 file_names = next(os.walk(IMAGE_DIR))[2]
-image = skimage.io.imread("/home/nxshen/machine-learning/2-hw/datasets/C1-P1_Train/2/00005.jpg")
+image = skimage.io.imread(PATH_ORIGINAL_DATA + "00005" + ".jpg")
  
 a=datetime.now()
 # Run detection
@@ -117,4 +117,4 @@ b=datetime.now()
 # Visualize results
 print("shijian",(b-a).seconds)
 r = results[0]
-visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'],class_names, r['scores'], show_bbox=False, show_mask=True)
+visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'],class_names, r['scores'], filestr, show_bbox=False, show_mask=True)
