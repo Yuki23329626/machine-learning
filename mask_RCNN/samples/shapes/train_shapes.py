@@ -253,13 +253,14 @@ class ShapesDataset(utils.Dataset):
 
 # Training dataset
 dataset_train = ShapesDataset()
-# 生成隨機的含任意形狀的 image
+# 生成隨機的含任意形狀的 image 用來 training
 dataset_train.load_shapes(500, config.IMAGE_SHAPE[0], config.IMAGE_SHAPE[1])
 print("\n\n==========\n\nconfig.IMAGE_SHAPE[1]: ",config.IMAGE_SHAPE[1],"\n\n==========\n\n")
 dataset_train.prepare()
 
 # Validation dataset
 dataset_val = ShapesDataset()
+# 生成隨機的含任意形狀的 image 用來做 validation
 dataset_val.load_shapes(50, config.IMAGE_SHAPE[0], config.IMAGE_SHAPE[1])
 dataset_val.prepare()
 
@@ -267,7 +268,7 @@ dataset_val.prepare()
 # In[6]:
 
 
-# Load and display random samples
+# 隨機從 training set 裡挑幾張圖片來看
 image_ids = np.random.choice(dataset_train.image_ids, 4)
 for image_id in image_ids:
     image = dataset_train.load_image(image_id)

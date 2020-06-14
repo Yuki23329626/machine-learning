@@ -124,7 +124,7 @@ class DrugDataset(utils.Dataset):
  
         for i in range(count):
             # 获取图片宽和高
-            print(i)
+            print("count: ", i)
             filestr = imglist[i].split(".")[0]
             # print(imglist[i],"-->",cv_img.shape[1],"--->",cv_img.shape[0])
             # print("id-->", i, " imglist[", i, "]-->", imglist[i],"filestr-->",filestr)
