@@ -27,7 +27,7 @@ correct = 0
 count = 0
 
 import pandas as pd
-df = pd.read_csv('./datasets/test_result2.csv')
+df = pd.read_csv('./datasets/test_result.csv')
 filename = df["image_id"].values
 label_np = df['label'].values
 
@@ -61,7 +61,7 @@ with open('./datasets/test_result.csv', 'w', newline='') as csvfile:
             test_loss += loss.item() * data.size(0)
             correct += (output.max(1)[1] == target).sum()
             print("output.max(1)[1]: ", output.max(1)[1].cpu().numpy()[0], "target: ", target.cpu().numpy())
-            writer.writerow([ z[count][0], label_set[output.max(1)[1].cpu().numpy()[0]]])
+            writer.writerow([ z[count][0], 'A'])#label_set[output.max(1)[1].cpu().numpy()[0]]
             count = count+1
         
     # test_loss /= len(test_loader.dataset)
