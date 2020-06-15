@@ -27,7 +27,7 @@ correct = 0
 count = 1
 
 import pandas as pd
-df = pd.read_csv('./datasets/dev.csv')
+df = pd.read_csv('./datasets/test_result.csv')
 filename = df["image_id"].values
 label_np = df['label'].values
 
@@ -41,6 +41,13 @@ z = list(zip(file_test, label_test))
 for i in range(len(z)):
     print("z[i][0]: ", z[i][0], "z[i][1]: ", z[i][1])
 
+import csv
+# 開啟輸出的 CSV 檔案
+with open('./datasets/test_result.csv', 'w', newline='') as csvfile:
+    # 建立 CSV 檔寫入器
+    writer = csv.writer(csvfile)
+    writer.writerow('image_id', 'label')
+
 with torch.no_grad():
     for data, target in test_loader:
         print("count: ", count)
@@ -51,7 +58,7 @@ with torch.no_grad():
         loss = torch.nn.functional.cross_entropy(output, target)
         test_loss += loss.item() * data.size(0)
         correct += (output.max(1)[1] == target).sum()
-        print(output.max(1)[1], target)
+        # print(output.max(1)[1], target)
         count = count+1
         
     test_loss /= len(test_loader.dataset)
