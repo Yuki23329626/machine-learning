@@ -39,7 +39,7 @@ label_test = label_np[:]
 
 z = list(zip(file_test, label_test))
 for i in range(len(z)):
-    print(z[1])
+    print(z[i][1])
 
 # with torch.no_grad():
 #     for data, target in test_loader:
