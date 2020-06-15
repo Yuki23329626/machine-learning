@@ -25,20 +25,30 @@ model.eval()
 test_loss = 0.
 correct = 0
 count = 1
-with torch.no_grad():
-    for data, target in test_loader:
-        print("count: ", count)
-        if use_cuda:
-            data, target = data.cuda(), target.cuda()
 
-        output = model(data)
-        loss = torch.nn.functional.cross_entropy(output, target)
-        test_loss += loss.item() * data.size(0)
-        correct += (output.max(1)[1] == target).sum()
-        print(output.max(1)[1], target)
-        count = count+1
+df = pd.read_csv('./datasets/dev.csv')
+filename = df["image_id"].values
+label_np = df['label'].values
+
+filename = [i+"" for i in file]
+file = [os.path.join("./datasets/C1-P1_Dev/1",i) for i in file]
+file_test = file[:]
+print(file_test)
+
+# with torch.no_grad():
+#     for data, target in test_loader:
+#         print("count: ", count)
+#         if use_cuda:
+#             data, target = data.cuda(), target.cuda()
+
+#         output = model(data)
+#         loss = torch.nn.functional.cross_entropy(output, target)
+#         test_loss += loss.item() * data.size(0)
+#         correct += (output.max(1)[1] == target).sum()
+#         print(output.max(1)[1], target)
+#         count = count+1
         
-    test_loss /= len(test_loader.dataset)
-    accuracy = 100. * correct / len(test_loader.dataset)
+#     test_loss /= len(test_loader.dataset)
+#     accuracy = 100. * correct / len(test_loader.dataset)
 
-    print('Test Loss: {:.6f}, Test Accuracy: {:.2f}% ({}/{})'.format(test_loss, accuracy, correct, len(test_loader.dataset)))
+#     print('Test Loss: {:.6f}, Test Accuracy: {:.2f}% ({}/{})'.format(test_loss, accuracy, correct, len(test_loader.dataset)))
