@@ -43,26 +43,26 @@ z = list(zip(file_test, label_test))
 
 import csv
 # 開啟輸出的 CSV 檔案
+
+label_set = ['A', 'B', 'C']
+
 with open('./datasets/test_result2.csv', 'w', newline='') as csvfile:
     # 建立 CSV 檔寫入器
     writer = csv.writer(csvfile)
     writer.writerow(['image_id', 'label'])
+    with torch.no_grad():
+        for data, target in test_loader:
+            print("count: ", count)
+            if use_cuda:
+                data, target = data.cuda(), target.cuda()
 
-label_set = ['A', 'B', 'C']
-
-with torch.no_grad():
-    for data, target in test_loader:
-        print("count: ", count)
-        if use_cuda:
-            data, target = data.cuda(), target.cuda()
-
-        output = model(data)
-        loss = torch.nn.functional.cross_entropy(output, target)
-        test_loss += loss.item() * data.size(0)
-        correct += (output.max(1)[1] == target).sum()
-        print("output.max(1)[1]: ", output.max(1)[1].cpu().numpy()[0], "target: ", target.cpu().numpy())
-        writer.writerow([ z[count][0], 'A'])
-        count = count+1
+            output = model(data)
+            loss = torch.nn.functional.cross_entropy(output, target)
+            test_loss += loss.item() * data.size(0)
+            correct += (output.max(1)[1] == target).sum()
+            print("output.max(1)[1]: ", output.max(1)[1].cpu().numpy()[0], "target: ", target.cpu().numpy())
+            writer.writerow([ z[count][0], 'A'])
+            count = count+1
         
     test_loss /= len(test_loader.dataset)
     accuracy = 100. * correct / len(test_loader.dataset)
