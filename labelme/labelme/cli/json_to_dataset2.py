@@ -12,14 +12,14 @@ from labelme import utils
 import yaml
 
 # base setting
-PATH_ORIGINAL_DATA = "/home/michael/machine-learning/mask_RCNN/samples/trinmy/myinfo/json/"
+PATH_ORIGINAL_DATA = "/home/nxshen/machine-learning/mask_RCNN/samples/trinmy/myinfo/json/"
 imglist = os.listdir(PATH_ORIGINAL_DATA)
 count = len(imglist)
 # print("count", count)
 
 for i in range(count):
 
-    dataset_root_path = "/home/michael/machine-learning/mask_RCNN/samples/trinmy/myinfo/"
+    dataset_root_path = "/home/nxshen/machine-learning/mask_RCNN/samples/trinmy/myinfo/"
     img_floder = dataset_root_path + "pic/"
     mask_floder = dataset_root_path + "cv2_mask/"
     yaml_folder = dataset_root_path + "labelme_json/"
@@ -62,8 +62,9 @@ for i in range(count):
     lbl_viz = imgviz.label2rgb(
         label=lbl, img=imgviz.asgray(img), label_names=label_names, loc='rb'
     )
-
+    
     PIL.Image.fromarray(img).save(img_floder + json_file.split(".")[0] + ".png", "PNG")
+    PIL.Image.fromarray(img).save(yaml_folder + json_file.split(".")[0] + ".png", "PNG")
     utils.lblsave(mask_floder + json_file.split(".")[0] + ".png", lbl)
 
     if not os.path.exists(os.path.dirname(yaml_folder + json_file.split(".")[0] + "_json/label_viz.png")):
