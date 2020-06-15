@@ -126,10 +126,13 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
 
     print("boxes: ", boxes)
     print("scorces: ", scores)
-    boxes[np.argmax(scores, axis=0)]
-    print("max scorce: ", boxes[np.argmax(scores, axis=0)])
+    index_max_score = np.argmax(scores, axis=0)
+    boxes[index_max_score]
+    print("max scorce: ", boxes[index_max_score])
 
     for i in range(N):
+        if i != index_max_score:
+            continue
         color = colors[i]
 
         # Bounding box
