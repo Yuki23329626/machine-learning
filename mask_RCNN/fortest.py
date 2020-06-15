@@ -111,6 +111,8 @@ logging.basicConfig(level=logging.DEBUG,
                     datefmt='%m-%d %H:%M',
                     filename='output.log',
                     filemode='w')
+                    
+logging.getLogger().addHandler(logging.StreamHandler())
 
 # logger1.info('Just for testing')
 
