@@ -33,7 +33,12 @@ label_np = df['label'].values
 
 filename = [i+"" for i in filename]
 file_test = filename[:]
-print(file_test)
+
+label_np = [i+"" for i in label_np]
+label_test = label_np[:]
+
+z = list(zip(file_test, label_test))
+print(z)
 
 # with torch.no_grad():
 #     for data, target in test_loader:
