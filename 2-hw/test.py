@@ -48,6 +48,8 @@ with open('./datasets/test_result2.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(['image_id', 'label'])
 
+label_set = ['A', 'B', 'C']
+
 with torch.no_grad():
     for data, target in test_loader:
         print("count: ", count)
@@ -58,7 +60,7 @@ with torch.no_grad():
         loss = torch.nn.functional.cross_entropy(output, target)
         test_loss += loss.item() * data.size(0)
         correct += (output.max(1)[1] == target).sum()
-        # print(output.max(1)[1], target)
+        writer.writerow([ z[i][0], output.max(1)[1]])
         count = count+1
         
     test_loss /= len(test_loader.dataset)
