@@ -11,13 +11,13 @@ from labelme.logger import logger
 from labelme import utils
 import yaml
 
-# 基础设置
+# base setting
 PATH_ORIGINAL_DATA = "/home/michael/machine-learning/mask_RCNN/samples/trinmy/myinfo/json/"
 imglist = os.listdir(PATH_ORIGINAL_DATA)
 count = len(imglist)
 # print("count", count)
 
-for i in range(1):
+for i in range(count):
 
     dataset_root_path = "/home/michael/machine-learning/mask_RCNN/samples/trinmy/myinfo/"
     img_floder = dataset_root_path + "pic/"
