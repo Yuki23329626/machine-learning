@@ -114,8 +114,7 @@ logging.basicConfig(level=logging.DEBUG,
 
 # logger1.info('Just for testing')
 
-for i in range(1):
-  i=29
+for i in range(count):
   logging.info('count: %s', i)#print("count: ", i)
   logging.info('image: %s', imglist[i])#print("image: ", imglist[i])
   filestr = imglist[i].split(".")[0]
