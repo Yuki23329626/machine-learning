@@ -1,7 +1,7 @@
 MODEL:
   OUTPUT_PATH: "../2-hw/weights/model.pth"
   LR: 1e-5
-  EPOCH: 10
+  EPOCH: 50
 
 DATA:
   PIXEL_MEAN: [0.485, 0.456, 0.406]

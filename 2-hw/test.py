@@ -39,22 +39,22 @@ label_test = label_np[:]
 
 z = list(zip(file_test, label_test))
 for i in range(len(z)):
-    print(z[i][1])
+    print("z[i][0]: ", z[i][0], "z[i][1]: ", z[i][1])
 
-# with torch.no_grad():
-#     for data, target in test_loader:
-#         print("count: ", count)
-#         if use_cuda:
-#             data, target = data.cuda(), target.cuda()
+with torch.no_grad():
+    for data, target in test_loader:
+        print("count: ", count)
+        if use_cuda:
+            data, target = data.cuda(), target.cuda()
 
-#         output = model(data)
-#         loss = torch.nn.functional.cross_entropy(output, target)
-#         test_loss += loss.item() * data.size(0)
-#         correct += (output.max(1)[1] == target).sum()
-#         print(output.max(1)[1], target)
-#         count = count+1
+        output = model(data)
+        loss = torch.nn.functional.cross_entropy(output, target)
+        test_loss += loss.item() * data.size(0)
+        correct += (output.max(1)[1] == target).sum()
+        print(output.max(1)[1], target)
+        count = count+1
         
-#     test_loss /= len(test_loader.dataset)
-#     accuracy = 100. * correct / len(test_loader.dataset)
+    test_loss /= len(test_loader.dataset)
+    accuracy = 100. * correct / len(test_loader.dataset)
 
-#     print('Test Loss: {:.6f}, Test Accuracy: {:.2f}% ({}/{})'.format(test_loss, accuracy, correct, len(test_loader.dataset)))
+    print('Test Loss: {:.6f}, Test Accuracy: {:.2f}% ({}/{})'.format(test_loss, accuracy, correct, len(test_loader.dataset)))
