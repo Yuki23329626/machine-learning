@@ -126,8 +126,8 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
 
     print("boxes: ", boxes)
     print("scorces: ", scores)
-    boxes[scores[np.argmax(scores, axis=0)]]
-    print("max scorce: ", boxes[scores[np.argmax(scores, axis=0)]])
+    boxes[np.argmax(scores, axis=0)]
+    print("max scorce: ", boxes[np.argmax(scores, axis=0)])
 
     for i in range(N):
         color = colors[i]
