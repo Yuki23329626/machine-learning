@@ -60,7 +60,7 @@ with torch.no_grad():
         loss = torch.nn.functional.cross_entropy(output, target)
         test_loss += loss.item() * data.size(0)
         correct += (output.max(1)[1] == target).sum()
-        print("output.max(1)[1]: ", output.max(1)[1], "target: ", target)
+        print("output.max(1)[1]: ", output.max(1)[1].numpy(), "target: ", target)
         # writer.writerow([ z[i][0], output.max(1)[1]])
         count = count+1
         
