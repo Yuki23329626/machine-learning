@@ -244,7 +244,7 @@ def make_test_loader(cfg):
     # 分別儲存test之label對映number
     #print(label_np.shape)
     number = []
-    for i in range(800):
+    for i in range(len(file_test)):
         number.append(dic[label_np[i]])
     number = np.array(number)
     # print("number: ", number)
