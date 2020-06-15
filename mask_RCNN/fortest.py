@@ -103,18 +103,9 @@ count = len(imglist)
 # print("count", count)
 PATH_OUTPUT_DATA = "data_mango/"
 
-import logging
-
-# set up logging to file - see previous section for more details
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
-                    datefmt='%m-%d %H:%M',
-                    filename='output.log',
-                    filemode='w')
-                    
-logging.getLogger().addHandler(logging.StreamHandler())
-
 # logger1.info('Just for testing')
+
+from mrcnn.visualize import logging
 
 for i in range(count):
   logging.info('count: %s', i)#print("count: ", i)
