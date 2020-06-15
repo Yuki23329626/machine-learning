@@ -31,8 +31,8 @@ with torch.no_grad():
             data, target = data.cuda(), target.cuda()
 
         output = model(data)
-        print(output)
         loss = torch.nn.functional.cross_entropy(output, target)
+        print(loss)
         test_loss += loss.item() * data.size(0)
         correct += (output.max(1)[1] == target).sum()
         
