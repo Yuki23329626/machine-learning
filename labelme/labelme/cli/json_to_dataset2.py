@@ -64,7 +64,7 @@ for i in range(count):
     )
     
     PIL.Image.fromarray(img).save(img_floder + json_file.split(".")[0] + ".png", "PNG")
-    PIL.Image.fromarray(img).save(yaml_folder + json_file.split(".")[0] + ".png", "PNG")
+    PIL.Image.fromarray(img).save(yaml_folder + json_file.split(".")[0] + "_json/img.png", "PNG")
     utils.lblsave(mask_floder + json_file.split(".")[0] + ".png", lbl)
 
     if not os.path.exists(os.path.dirname(yaml_folder + json_file.split(".")[0] + "_json/label_viz.png")):
