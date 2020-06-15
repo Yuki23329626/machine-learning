@@ -246,8 +246,10 @@ def make_test_loader(cfg):
     number = []
     for i in range(800):
         number.append(dic[label_np[i]])
-    number = np.array(number) 
+    number = np.array(number)
+    print("number: ", number)
     number_test = number[:]
+    print("number_test", number_test)
     np.save("number_test.npy", number_test)
 
     # 三.Dataloader
