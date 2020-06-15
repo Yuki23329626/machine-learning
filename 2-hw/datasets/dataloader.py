@@ -73,6 +73,7 @@ def make_train_loader(cfg):
     file = [i+"" for i in file]
     # print(file[0]) = "00002.jpg"
     file = [os.path.join("./datasets/data_mango/4",i) for i in file]
+    print("path to dataset: ./datasets/data_mango/4")
     # print(file[0]) = "./datasets/C1-P1_Train/2/00002.jpg"
     file_train = file[:4480]
     #print(file_train)
