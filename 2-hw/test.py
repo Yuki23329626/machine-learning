@@ -27,7 +27,7 @@ correct = 0
 count = 0
 
 import pandas as pd
-df = pd.read_csv('./datasets/test_result.csv')
+df = pd.read_csv('./datasets/test_result2.csv')
 filename = df["image_id"].values
 label_np = df['label'].values
 
@@ -46,7 +46,7 @@ import csv
 
 label_set = ['A', 'B', 'C']
 
-with open('./datasets/test_result2.csv', 'w', newline='') as csvfile:
+with open('./datasets/test_result.csv', 'w', newline='') as csvfile:
     # 建立 CSV 檔寫入器
     writer = csv.writer(csvfile)
     writer.writerow(['image_id', 'label'])
@@ -64,7 +64,7 @@ with open('./datasets/test_result2.csv', 'w', newline='') as csvfile:
             writer.writerow([ z[count][0], label_set[output.max(1)[1].cpu().numpy()[0]]])
             count = count+1
         
-    test_loss /= len(test_loader.dataset)
-    accuracy = 100. * correct / len(test_loader.dataset)
+    # test_loss /= len(test_loader.dataset)
+    # accuracy = 100. * correct / len(test_loader.dataset)
 
-    print('Test Loss: {:.6f}, Test Accuracy: {:.2f}% ({}/{})'.format(test_loss, accuracy, correct, len(test_loader.dataset)))
+    # print('Test Loss: {:.6f}, Test Accuracy: {:.2f}% ({}/{})'.format(test_loss, accuracy, correct, len(test_loader.dataset)))
