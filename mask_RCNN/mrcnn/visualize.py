@@ -123,6 +123,9 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
     masked_image = image.astype(np.uint32).copy()
     # print("masked_image", masked_image)
     print("masked_image.shape", masked_image.shape)
+
+    print("boxes: ", boxes)
+
     for i in range(N):
         color = colors[i]
 
@@ -168,8 +171,8 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
         #     ax.add_patch(p)
 
     ax.imshow(masked_image.astype(np.uint8))
-    # if auto_show:
-    #     plt.show()
+    if auto_show:
+        plt.show()
     fig = ax.get_figure()
     fig.savefig( path_output + filestr + ".jpg")
 

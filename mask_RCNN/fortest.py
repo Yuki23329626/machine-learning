@@ -103,7 +103,7 @@ count = len(imglist)
 # print("count", count)
 PATH_OUTPUT_DATA = "data_mango/"
 
-for i in range(count):
+for i in range(1):
   print("count: ", i)
   print("image: ", imglist[i])
   filestr = imglist[i].split(".")[0]
