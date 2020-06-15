@@ -28,6 +28,8 @@ sys.path.append(ROOT_DIR)  # To find local version of the library
 from mrcnn import utils
 
 import logging
+logging.getLogger().addHandler(console)
+logger1 = logging.getLogger('mrcnn.visualize.py')
 
 ############################################################
 #  Visualization
