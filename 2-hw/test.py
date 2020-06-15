@@ -24,7 +24,7 @@ model.eval()
 
 test_loss = 0.
 correct = 0
-count = 1
+count = 0
 
 import pandas as pd
 df = pd.read_csv('./datasets/test_result.csv')
@@ -61,7 +61,7 @@ with torch.no_grad():
         test_loss += loss.item() * data.size(0)
         correct += (output.max(1)[1] == target).sum()
         print("output.max(1)[1]: ", output.max(1)[1].cpu().numpy()[0], "target: ", target.cpu().numpy())
-        writer.writerow([ z[i][0], label_set[output.max(1)[1].cpu().numpy()[0]]])
+        writer.writerow([ z[count][0], label_set[output.max(1)[1].cpu().numpy()[0]]])
         count = count+1
         
     test_loss /= len(test_loader.dataset)
