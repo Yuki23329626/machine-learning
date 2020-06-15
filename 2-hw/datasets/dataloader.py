@@ -228,7 +228,7 @@ def make_test_loader(cfg):
 
     # 2)處理csv中image_id那一列，分割成兩段：裡面就是圖片的路徑
     file = df["image_id"].values
-    print(file)
+    # print(file)
 
     import os
     file = [i+"" for i in file]
@@ -247,9 +247,9 @@ def make_test_loader(cfg):
     for i in range(800):
         number.append(dic[label_np[i]])
     number = np.array(number)
-    print("number: ", number)
+    # print("number: ", number)
     number_test = number[:]
-    print("number_test", number_test)
+    # print("number_test", number_test)
     np.save("number_test.npy", number_test)
 
     # 三.Dataloader
