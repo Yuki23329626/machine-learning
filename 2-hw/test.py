@@ -34,8 +34,8 @@ label_np = df['label'].values
 filename = [i+"" for i in filename]
 file_test = filename[:]
 
-# label_np = [i+"" for i in label_np]
-# label_test = label_np[:]
+label_np = [i+"" for i in range(filename)]
+label_test = label_np[:]
 
 z = list(zip(file_test, label_test))
 for i in range(len(z)):
