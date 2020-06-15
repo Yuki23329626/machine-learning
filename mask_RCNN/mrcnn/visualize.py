@@ -156,9 +156,9 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
     index_max_score = np.argmax(scores, axis=0)
     boxes[index_max_score]
     print("max scorce: ", boxes[index_max_score])
-    logger1.info("boxes: " + boxes)
-    logger1.info("scorces: " + scores)
-    logger1.info("max scorce: " + boxes[index_max_score])
+    logger1.info("boxes: %s", boxes)
+    logger1.info("scorces: %s", scores)
+    logger1.info("max scorce: %s", boxes[index_max_score])
 
     for i in range(N):
         if i != index_max_score:
