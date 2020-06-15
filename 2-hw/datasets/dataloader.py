@@ -37,6 +37,7 @@ def make_train_loader(cfg):
     import numpy as np
     # 讀取csv檔
     df = pd.read_csv('./datasets/train.csv')
+    print("csv object: ", df)
     # 用pandas把表格信息讀出來
     #print(df.info())
     #print(df.head())
