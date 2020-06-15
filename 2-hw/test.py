@@ -27,19 +27,19 @@ correct = 0
 count = 0
 
 import pandas as pd
-# df = pd.read_csv('./datasets/test_result.csv')
-# filename = df["image_id"].values
-# label_np = df['label'].values
+df = pd.read_csv('./datasets/test_example.csv')
+filename = df["image_id"].values
+label_np = df['label'].values
 
-# filename = [i+"" for i in filename]
-# file_test = filename[:]
+filename = [i+"" for i in filename]
+file_test = filename[:]
 
-# label_np = [i+"" for i in filename]
-# label_test = label_np[:]
+label_np = [i+"" for i in filename]
+label_test = label_np[:]
 
-# z = list(zip(file_test, label_test))
-# for i in range(len(z)):
-#     print("z[i][0]: ", z[i][0], "z[i][1]: ", z[i][1])
+z = list(zip(file_test, label_test))
+for i in range(len(z)):
+    print("z[i][0]: ", z[i][0], "z[i][1]: ", z[i][1])
 
 import csv
 # 開啟輸出的 CSV 檔案
