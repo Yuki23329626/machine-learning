@@ -33,8 +33,8 @@ with torch.no_grad():
         output = model(data)
         loss = torch.nn.functional.cross_entropy(output, target)
         test_loss += loss.item() * data.size(0)
-        print(test_loss)
         correct += (output.max(1)[1] == target).sum()
+        print(output.max(1)[1])
         
     test_loss /= len(test_loader.dataset)
     accuracy = 100. * correct / len(test_loader.dataset)
