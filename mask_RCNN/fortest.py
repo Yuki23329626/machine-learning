@@ -111,30 +111,13 @@ logging.basicConfig(level=logging.DEBUG,
                     datefmt='%m-%d %H:%M',
                     filename='output.log',
                     filemode='w')
-# define a Handler which writes INFO messages or higher to the sys.stderr
-console = logging.StreamHandler()
-console.setLevel(logging.INFO)
-# set a format which is simpler for console use
-formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
-# tell the handler to use this format
-console.setFormatter(formatter)
-# add the handler to the root logger
-logging.getLogger().addHandler(console)
-
-# Now, we can log to the root logger, or any other logger. First the root...
-# logging.info('just for test')
-
-# Now, define a couple of other loggers which might represent areas in your
-# application:
-
-logger1 = logging.getLogger('mrcnn.visualize.py')
 
 # logger1.info('Just for testing')
 
 for i in range(1):
   i=29
-  logger1.info('count: %s', i)#print("count: ", i)
-  logger1.info('image: %s', imglist[i])#print("image: ", imglist[i])
+  logging.info('count: %s', i)#print("count: ", i)
+  logging.info('image: %s', imglist[i])#print("image: ", imglist[i])
   filestr = imglist[i].split(".")[0]
   # print("filestr: ", filestr)
 
