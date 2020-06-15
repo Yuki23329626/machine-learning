@@ -197,7 +197,7 @@ def make_test_loader(cfg):
     import pandas as pd
     import numpy as np
     # 讀取csv檔
-    df = pd.read_csv('./datasets/test_result.csv')
+    df = pd.read_csv('./datasets/test_result2.csv')
     # print("csv object: ", df)
     # 用pandas把表格信息讀出來
     #print(df.info())
