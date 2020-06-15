@@ -143,7 +143,7 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
 
     for i in range(N):
         if i != index_max_score:
-            logger1.info("continue")
+            logging.info("continue")
             continue
         color = colors[i]
 
