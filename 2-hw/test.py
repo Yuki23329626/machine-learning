@@ -61,7 +61,7 @@ with torch.no_grad():
         test_loss += loss.item() * data.size(0)
         correct += (output.max(1)[1] == target).sum()
         print("output.max(1)[1]: ", output.max(1)[1].cpu().numpy()[0], "target: ", target.cpu().numpy())
-        writer.writerow([ z[count][0], label_set[output.max(1)[1].cpu().numpy()[0]]])
+        writer.writerow([ z[count][0], 'A'])
         count = count+1
         
     test_loss /= len(test_loader.dataset)
