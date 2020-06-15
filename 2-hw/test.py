@@ -31,9 +31,9 @@ df = pd.read_csv('./datasets/dev.csv')
 filename = df["image_id"].values
 label_np = df['label'].values
 
-filename = [i+"" for i in file]
-file = [os.path.join("./datasets/C1-P1_Dev/1",i) for i in file]
-file_test = file[:]
+filename = [i+"" for i in filename]
+filename = [os.path.join("./datasets/C1-P1_Dev/1",i) for i in filename]
+file_test = filename[:]
 print(file_test)
 
 # with torch.no_grad():
