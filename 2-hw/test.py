@@ -38,8 +38,8 @@ label_np = [i+"" for i in filename]
 label_test = label_np[:]
 
 z = list(zip(file_test, label_test))
-for i in range(len(z)):
-    # print("z[i][0]: ", z[i][0], "z[i][1]: ", z[i][1])
+# for i in range(len(z)):
+#     print("z[i][0]: ", z[i][0], "z[i][1]: ", z[i][1])
 
 import csv
 # 開啟輸出的 CSV 檔案
