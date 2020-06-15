@@ -19,7 +19,7 @@ count = len(imglist)
 # print("count", count)
 
 for i in range(count):
-
+    print("count: ", i)
     img_floder = dataset_root_path + "pic/"
     mask_floder = dataset_root_path + "cv2_mask/"
     yaml_folder = dataset_root_path + "labelme_json/"
