@@ -43,10 +43,10 @@ for i in range(len(z)):
 
 import csv
 # 開啟輸出的 CSV 檔案
-with open('./datasets/test_result.csv', 'w', newline='') as csvfile:
+with open('./datasets/test_result2.csv', 'w', newline='') as csvfile:
     # 建立 CSV 檔寫入器
     writer = csv.writer(csvfile)
-    writer.writerow('image_id', 'label')
+    writer.writerow(['image_id', 'label'])
 
 with torch.no_grad():
     for data, target in test_loader:
