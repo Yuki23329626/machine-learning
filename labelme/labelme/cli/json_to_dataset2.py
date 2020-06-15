@@ -12,14 +12,14 @@ from labelme import utils
 import yaml
 
 # base setting
-PATH_ORIGINAL_DATA = "/home/michael/machine-learning/mask_RCNN/samples/trinmy/myinfo/json/"
+dataset_root_path = "/home/michael/machine-learning/mask_RCNN/samples/trinmy/myinfo/"
+PATH_ORIGINAL_DATA = dataset_root_path + "json/"
 imglist = os.listdir(PATH_ORIGINAL_DATA)
 count = len(imglist)
 # print("count", count)
 
 for i in range(count):
 
-    dataset_root_path = "/home/michael/machine-learning/mask_RCNN/samples/trinmy/myinfo/"
     img_floder = dataset_root_path + "pic/"
     mask_floder = dataset_root_path + "cv2_mask/"
     yaml_folder = dataset_root_path + "labelme_json/"
@@ -31,7 +31,7 @@ for i in range(count):
 
     json_file = imglist[i]
     
-    data = json.load(open(json_file))
+    data = json.load(open(PATH_ORIGINAL_DATA + json_file))
     imageData = data.get('imageData')
 
     if not imageData:
@@ -64,14 +64,15 @@ for i in range(count):
     )
     
     PIL.Image.fromarray(img).save(img_floder + json_file.split(".")[0] + ".png", "PNG")
-    PIL.Image.fromarray(img).save(yaml_folder + json_file.split(".")[0] + "_json/img.png", "PNG")
-    utils.lblsave(mask_floder + json_file.split(".")[0] + ".png", lbl)
 
     if not os.path.exists(os.path.dirname(yaml_folder + json_file.split(".")[0] + "_json/label_viz.png")):
         try:
             os.makedirs(os.path.dirname(yaml_folder + json_file.split(".")[0] + "_json/label_viz.png"))
         except OSError as exc: # Guard against race condition
             print("OSerror")
+
+    PIL.Image.fromarray(img).save(yaml_folder + json_file.split(".")[0] + "_json/img.png", "PNG")
+    utils.lblsave(mask_floder + json_file.split(".")[0] + ".png", lbl)
 
     PIL.Image.fromarray(lbl_viz).save(yaml_folder + json_file.split(".")[0] + "_json/label_viz.png")
 
