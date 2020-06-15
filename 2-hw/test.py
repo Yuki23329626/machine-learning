@@ -26,6 +26,7 @@ test_loss = 0.
 correct = 0
 count = 1
 
+import pandas as pd
 df = pd.read_csv('./datasets/dev.csv')
 filename = df["image_id"].values
 label_np = df['label'].values
