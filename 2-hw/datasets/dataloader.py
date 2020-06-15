@@ -73,6 +73,7 @@ def make_train_loader(cfg):
     file = [i+"" for i in file]
     # print(file[0]) = "00002.jpg"
     file = [os.path.join("./datasets/data_mango/4",i) for i in file]
+    print("path to dataset: ./datasets/data_mango/4")
     # print(file[0]) = "./datasets/C1-P1_Train/2/00002.jpg"
     file_train = file[:4480]
     #print(file_train)
@@ -197,7 +198,7 @@ def make_test_loader(cfg):
     import pandas as pd
     import numpy as np
     # 讀取csv檔
-    df = pd.read_csv('./datasets/test_example.csv')
+    df = pd.read_csv('./datasets/dev.csv')
     # print("csv object: ", df)
     # 用pandas把表格信息讀出來
     #print(df.info())
@@ -232,7 +233,7 @@ def make_test_loader(cfg):
 
     import os
     file = [i+"" for i in file]
-    file = [os.path.join("./datasets/C1-P1_Test/3",i) for i in file]
+    file = [os.path.join("./datasets/C1-P1_Dev/1",i) for i in file]
     file_test = file[:]
     #print(len(file_test))	# 800
     #print(file_test)	# 圖片路徑
