@@ -210,10 +210,6 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
     # print(resized_img)
     
     resized_img = masked_image[y1:y2, x1:x2, :]
-
-    plt.gca().xaxis.set_major_locator( plt.NullLocator())
-    plt.gca().yaxis.set_major_locator(plt.NullLocator())
-    plt.subplots_adjust(top=1,bottom=0,left=0,right=1,hspace=0,wspace=0)
     plt.margins(0,0)
 
     ax.imshow(resized_img.astype(np.uint8))
