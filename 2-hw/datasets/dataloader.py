@@ -233,7 +233,7 @@ def make_test_loader(cfg):
 
     import os
     file = [i+"" for i in file]
-    file = [os.path.join("./datasets/C1-P1_Test/3",i) for i in file]
+    file = [os.path.join("./datasets/C1-P1_Dev/1",i) for i in file]#./datasets/C1-P1_Test/3
     file_test = file[:]
     #print(len(file_test))	# 800
     #print(file_test)	# 圖片路徑
