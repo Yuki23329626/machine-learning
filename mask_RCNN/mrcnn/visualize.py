@@ -211,9 +211,8 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
     # print(resized_img)
     
     resized_img = masked_image[y1:y2, x1:x2, :]
-    set(gca,'looseInset',[0 0 0 0])
 
-    ax.imshow(resized_img.astype(np.uint8))
+    ax.imshow(resized_img.astype(np.uint8),'border','tight','initialmagnification','fit')
     # if auto_show:
     #     plt.show()
     fig = ax.get_figure()
