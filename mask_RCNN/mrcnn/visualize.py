@@ -210,7 +210,7 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
     # resized_img = masked_image[x1:x2, y1:y2, :]
     # print(resized_img)
     
-    resized_img = masked_image[x1:x2, y1:y2, :]
+    resized_img = masked_image[y1:y2, x1:xt2, :]
 
     ax.imshow(resized_img.astype(np.uint8))
     # if auto_show:
