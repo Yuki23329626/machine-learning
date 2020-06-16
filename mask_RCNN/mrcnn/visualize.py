@@ -207,6 +207,7 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
         #     p = Polygon(verts, facecolor="none", edgecolor=color)
         #     ax.add_patch(p)
     resized_img = masked_image[x1:x2, y1:y2, :]
+    print(resized_img)
     ax.imshow(resized_img.astype(np.uint8))
     # if auto_show:
     #     plt.show()
