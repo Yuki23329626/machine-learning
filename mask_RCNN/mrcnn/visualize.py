@@ -20,6 +20,7 @@ from matplotlib import patches,  lines
 from matplotlib.patches import Polygon
 import IPython.display
 import cv2
+from PIL import Image
 
 # Root directory of the project
 ROOT_DIR = os.path.abspath("../")
@@ -208,15 +209,17 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
         #     ax.add_patch(p)
     # resized_img = masked_image[x1:x2, y1:y2, :]
     # print(resized_img)
-    print("ax", ax)
-    print("ax.shape",ax.shape)
+    
     ax.imshow(masked_image.astype(np.uint8))
     # if auto_show:
     #     plt.show()
     fig = ax.get_figure()
     fig.savefig( path_output + filestr + ".jpg")
-
-
+    img=Image.open( path_output + filestr + ".jpg")
+    box=(x1,x2,y1,y2)
+    roi=img.crop(box)
+    plt.imshow(roi),plt.axis('off')
+    plt.savefig(path_output + filestr + ".jpg")
 
 def display_differences(image,
                         gt_box, gt_class_id, gt_mask,
