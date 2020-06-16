@@ -193,7 +193,7 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
         mask = masks[:, :, i]
         # print(mask)
         if show_mask:
-            masked_image = apply_mask(masked_image, mask, (1.0, 1.0, 1.0), alpha=1.0)
+            masked_image = apply_mask(masked_image, mask, (0.0, 0.0, 0.0), alpha=1.0)
 
         # # 把邊框畫出來的東東
         # # Pad to ensure proper polygons for masks that touch image edges.
@@ -211,10 +211,8 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
     # print(resized_img)
     
     resized_img = masked_image[x1:x2, y1:y2, :]
-    print("masked_image.shape: ", masked_image.shape)
-    print("resized_img.shape: ", resized_img.shape)
 
-    ax.imshow(masked_image.astype(np.uint8))
+    ax.imshow(resized_img.astype(np.uint8))
     # if auto_show:
     #     plt.show()
     fig = ax.get_figure()
