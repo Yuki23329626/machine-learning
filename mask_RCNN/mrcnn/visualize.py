@@ -172,8 +172,6 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
             # Skip this instance. Has no bbox. Likely lost in image cropping.
             continue
         y1, x1, y2, x2 = boxes[i]
-        ax.set_ylim(0, 0)
-        ax.set_xlim(0, 0)
         if show_bbox:
             p = patches.Rectangle((x1, y1), x2 - x1, y2 - y1, linewidth=2,
                                 alpha=0.7, linestyle="dashed",
@@ -214,7 +212,7 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
     
     resized_img = masked_image[y1:y2, x1:x2, :]
 
-    ax.imshow(resized_img.astype(np.uint8))
+    ax.imshow(masked_image.astype(np.uint8))
     # if auto_show:
     #     plt.show()
     fig = ax.get_figure()
