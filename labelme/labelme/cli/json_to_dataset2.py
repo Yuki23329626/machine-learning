@@ -12,7 +12,7 @@ from labelme import utils
 import yaml
 
 # base setting
-dataset_root_path = "/home/michael/machine-learning/mask_RCNN/samples/trinmy/myinfo/"
+dataset_root_path = "/home/nxshen/machine-learning/mask_RCNN/samples/trinmy/myinfo/"
 PATH_ORIGINAL_DATA = dataset_root_path + "json/"
 imglist = os.listdir(PATH_ORIGINAL_DATA)
 count = len(imglist)
