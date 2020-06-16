@@ -217,8 +217,8 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
     plt.margins(0,0)
 
     ax.imshow(resized_img.astype(np.uint8))
-    if auto_show:
-        plt.show()
+    # if auto_show:
+    #     plt.show()
     fig = ax.get_figure()
     fig.savefig( path_output + filestr + ".jpg", bbox_inches = 'tight')
 
