@@ -97,11 +97,11 @@ class_names = ['BG', 'mango']
 # Load a random image from the images folder
 
 # 基础设置
-PATH_ORIGINAL_DATA = "../2-hw/datasets/C1-P1_Train/2/"
+PATH_ORIGINAL_DATA = "../2-hw/datasets/C1-P1_Dev/1/"
 imglist = os.listdir(PATH_ORIGINAL_DATA)
 count = len(imglist)
 # print("count", count)
-PATH_OUTPUT_DATA = "data_mango/"
+PATH_OUTPUT_DATA = "data_mango_dev/"
 
 # logger1.info('Just for testing')
 
