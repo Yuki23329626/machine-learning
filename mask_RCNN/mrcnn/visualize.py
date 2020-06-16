@@ -206,16 +206,16 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
         #     verts = np.fliplr(verts) - 1
         #     p = Polygon(verts, facecolor="none", edgecolor=color)
         #     ax.add_patch(p)
-    resized_img = masked_image[x1:x2, y1:y2, :]
-    print(resized_img)
-    ax.imshow(resized_img.astype(np.uint8))
+    # resized_img = masked_image[x1:x2, y1:y2, :]
+    # print(resized_img)
+    ax.imshow(masked_image.astype(np.uint8))
     # if auto_show:
     #     plt.show()
     fig = ax.get_figure()
     fig.savefig( path_output + filestr + ".jpg")
-    # img = cv2.imread(path_output + filestr + ".jpg")
-    # resized_img = img[0:width-10, 0:height-10, :]
-    # cv2.imwrite(path_output + filestr + ".jpg", resized_img)
+    img = cv2.imread(path_output + filestr + ".jpg")
+    resized_img = img[0:width-10, 0:height-10, :]
+    cv2.imwrite(path_output + filestr + ".jpg", resized_img)
 
 
 
