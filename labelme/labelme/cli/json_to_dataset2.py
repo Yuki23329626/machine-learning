@@ -11,18 +11,19 @@ from labelme.logger import logger
 from labelme import utils
 import yaml
 
-# base setting
+# labelme 將 json 檔案轉換之後儲存的目的地 path
+# 最後會將檔案分到三個資料夾
 dataset_root_path = "/home/michael/machine-learning/mask_RCNN/samples/trinmy/myinfo/"
 PATH_ORIGINAL_DATA = dataset_root_path + "json/"
+img_floder = dataset_root_path + "pic/"
+mask_floder = dataset_root_path + "cv2_mask/"
+yaml_folder = dataset_root_path + "labelme_json/"
 imglist = os.listdir(PATH_ORIGINAL_DATA)
 count = len(imglist)
 # print("count", count)
 
 for i in range(count):
     print("count: ", i)
-    img_floder = dataset_root_path + "pic/"
-    mask_floder = dataset_root_path + "cv2_mask/"
-    yaml_folder = dataset_root_path + "labelme_json/"
 
     logger.warning('This script is aimed to demonstrate how to convert the '
                    'JSON file to a single image dataset.')

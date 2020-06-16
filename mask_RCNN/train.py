@@ -182,9 +182,11 @@ def get_ax(rows=1, cols=1, size=8):
     return ax
  
  
-# 基础设置
+# 放 yaml 檔案的路徑
 dataset_root_path = "samples/trinmy/myinfo/"
+# 放 原始圖 檔案的路徑
 img_floder = dataset_root_path + "pic"
+# 放 mask 檔案的路徑
 mask_floder = dataset_root_path + "cv2_mask"
 # yaml_floder = dataset_root_path
 imglist = os.listdir(img_floder)

@@ -29,6 +29,7 @@ def make_train_loader(cfg):
     batch_size  = cfg.DATA.TRAIN_BATCH_SIZE
     valid_size  = cfg.DATA.VALIDATION_SIZE
     train_path  = cfg.PATH.TRAIN_SET
+    train_csv   = cfg.PATH.TRAIN_CSV
     
     transforms = build_transform(cfg)
 
@@ -36,7 +37,7 @@ def make_train_loader(cfg):
     import pandas as pd
     import numpy as np
     # 讀取csv檔
-    df = pd.read_csv('./datasets/train.csv')
+    df = pd.read_csv(train_csv)
     # 用pandas把表格信息讀出來
     #print(df.info())
     #print(df.head())
@@ -72,8 +73,8 @@ def make_train_loader(cfg):
     import os
     file = [i+"" for i in file]
     # print(file[0]) = "00002.jpg"
-    file = [os.path.join("./datasets/C1-P1_Train/2",i) for i in file]
-    print("path to dataset: ./datasets/C1-P1_Train/2")
+    file = [os.path.join(train_path,i) for i in file]
+    print("path to dataset:" + train_path)
     # print(file[0]) = "./datasets/C1-P1_Train/2/00002.jpg"
     file_train = file[:4480]
     #print(file_train)
@@ -186,11 +187,12 @@ def make_train_loader(cfg):
     return train_loader, valid_loader
 
 
-def make_test_loader(cfg):
+def make_dev_loader(cfg):
 
     num_workers = cfg.DATA.NUM_WORKERS
     batch_size  = cfg.DATA.TEST_BATCH_SIZE
-    test_path   = cfg.PATH.TEST_SET
+    dev_path    = cfg.PATH.DEV_SET
+    dev_csv     = cfg.PATH.DEV_CSV
 
     transforms = build_transform(cfg)
 
@@ -198,7 +200,7 @@ def make_test_loader(cfg):
     import pandas as pd
     import numpy as np
     # 讀取csv檔
-    df = pd.read_csv('./datasets/test_example.csv')
+    df = pd.read_csv(dev_csv)
     # print("csv object: ", df)
     # 用pandas把表格信息讀出來
     #print(df.info())
@@ -233,7 +235,7 @@ def make_test_loader(cfg):
 
     import os
     file = [i+"" for i in file]
-    file = [os.path.join("./datasets/C1-P1_Test/3",i) for i in file]#./datasets/C1-P1_Test/3
+    file = [os.path.join(dev_path,i) for i in file]#./datasets/C1-P1_Test/3
     file_test = file[:]
     #print(len(file_test))	# 800
     #print(file_test)	# 圖片路徑
@@ -311,3 +313,128 @@ def make_test_loader(cfg):
 
     return test_loader
 
+def make_test_loader(cfg):
+
+    num_workers = cfg.DATA.NUM_WORKERS
+    batch_size  = cfg.DATA.TEST_BATCH_SIZE
+    test_path    = cfg.PATH.TEST_SET
+    test_csv     = cfg.PATH.TEST_CSV
+
+    transforms = build_transform(cfg)
+
+    #-----------------------------------讀取csv檔-----------------------------------
+    import pandas as pd
+    import numpy as np
+    # 讀取csv檔
+    df = pd.read_csv(test_csv)
+    # print("csv object: ", df)
+    # 用pandas把表格信息讀出來
+    #print(df.info())
+    #print(df.head())
+
+    # 二.預處理
+    # 我們要做的事情是：
+    # 1)得到一個長list1 : 裡面是每張圖片的路徑
+    # 2)另外一個長list2: 裡面是每張圖片對應的標籤（整數），順序要和list1對應。
+    # 3)把這兩個list切分出來一部分作為驗證集
+
+    # 1)查看共有多少label,把每種label名稱和數字編號對應起來
+    from pandas import DataFrame
+    label_np = df['label'].values
+    #print(type(label_np))
+    #print(label_np.shape)   # (5600,)
+
+    # 查看共有多少不同種類
+    label_set = ['A', 'B', 'C']
+    #print(len(label_set))   # 3
+    #print("220:, ", label_set)	# {'C', 'A', 'B'}
+
+    #構建一個編號與名稱對應的字典，以後輸出的數字要變成名字的時候用：
+    label_3_list = list(label_set)
+    dic = {}
+    for i in range(3):
+        dic[label_3_list[i]] = i
+
+    # 2)處理csv中image_id那一列，分割成兩段：裡面就是圖片的路徑
+    file = df["image_id"].values
+    # print(file)
+
+    import os
+    file = [i+"" for i in file]
+    file = [os.path.join(test_path,i) for i in file]#./datasets/C1-P1_Test/3
+    file_test = file[:]
+    #print(len(file_test))	# 800
+    #print(file_test)	# 圖片路徑
+
+    # 儲存test之對映好的檔案
+    np.save("file_test.npy", file_test)
+
+    # 3)處理label那一列
+    # 分別儲存test之label對映number
+    #print(label_np.shape)
+    number = []
+    for i in range(len(file_test)):
+        number.append(dic[label_np[i]])
+    number = np.array(number)
+    # print("number: ", number)
+    number_test = number[:]
+    # print("number_test", number_test)
+    np.save("number_test.npy", number_test)
+
+    # 三.Dataloader
+    # 我們已經有圖片路徑的list、target編號的list，將他們填到Dataset類裡即可
+    from torch.utils.data import Dataset, DataLoader
+    from torchvision import transforms, utils
+
+    normalize = transforms.Normalize(
+        mean=[0.485, 0.456, 0.406],
+        std=[0.229, 0.224, 0.225]
+    )
+
+    preprocess = transforms.Compose([
+        #transforms.Scale(256),
+        #transforms.CenterCrop(224),
+        transforms.ToTensor(),
+        normalize
+    ])
+
+    from PIL import Image
+
+    def default_loader(path):
+        img_pil =  Image.open(path)
+        img_pil = img_pil.resize((224,224))
+        img_tensor = preprocess(img_pil)
+        return img_tensor
+
+    # 因為他們出來的時候都已經全都變成tensor，所以我們只需要接著做以下三個函數定義
+
+    #自定義Dataset只需要最下面一個class,繼承自Dataset類。
+
+    #以下三個私有函數綜合起來看其實就是你告訴它你所有數據的長度，它每次給你返回一個shuffle過的index，以這個方式遍歷數據集，通過__getitem__(self, index)返回一組你要的(input,target)
+
+    class testset(Dataset):
+        def __init__(self, loader=default_loader):
+            # 這裡一般要初始化一個loader,一個images_path的列表，一個target的列表
+            self.images = file_test
+            self.target = number_test
+            self.loader = loader
+
+        def __getitem__(self, index):
+            # 這裡是在給你一個index的時候，返回一個圖片的tensor和target的tensor
+	    # 使用loader方法，經過歸一化，剪裁，類型轉化，從圖像變成tensor
+            fn = self.images[index]
+            img = self.loader(fn)
+            target = self.target[index]
+            return img,target
+
+        def __len__(self):
+            # return所有數據的個數
+            return len(self.images)
+
+    #------------------------------------------------------------------------------
+
+    #testset = datasets.ImageFolder(test_path, transform=transforms)
+
+    test_loader = DataLoader(testset(), batch_size=batch_size, num_workers=num_workers)
+
+    return test_loader

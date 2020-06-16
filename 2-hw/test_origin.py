@@ -1,6 +1,6 @@
 from model      import cnn_model
 from config     import cfg
-from datasets   import make_test_loader
+from datasets   import make_dev_loader
 
 import torch, os
 import numpy as np
@@ -18,7 +18,7 @@ if use_cuda:
     torch.cuda.set_device(gpu_id)
     model.cuda()
 
-test_loader = make_test_loader(cfg)
+test_loader = make_dev_loader(cfg)
 
 model.eval()
 
