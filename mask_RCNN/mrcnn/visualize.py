@@ -212,7 +212,7 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
     #     plt.show()
     fig = ax.get_figure()
     fig.savefig( path_output + filestr + ".jpg")
-    resized_fig = fig[x1:y1, x2:y2,:]
+    resized_fig = ax[x1:y1, x2:y2,:]
     ax.imshow(resized_fig)
 
 
