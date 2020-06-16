@@ -28,7 +28,7 @@ from mrcnn import visualize
 MODEL_DIR = os.path.join(ROOT_DIR, "logs")
  
 # Local path to trained weights file
-COCO_MODEL_PATH = os.path.join(MODEL_DIR ,"shapes20200615T1714/mask_rcnn_shapes_0010.h5")
+COCO_MODEL_PATH = os.path.join(MODEL_DIR ,"shapes20200615T0545/mask_rcnn_shapes_0001.h5")
 # Download COCO trained weights from Releases if needed
 if not os.path.exists(COCO_MODEL_PATH):
     utils.download_trained_weights(COCO_MODEL_PATH)
@@ -97,19 +97,15 @@ class_names = ['BG', 'mango']
 # Load a random image from the images folder
 
 # 基础设置
-PATH_ORIGINAL_DATA = "../2-hw/datasets/C1-P1_Dev/1/"
+PATH_ORIGINAL_DATA = "../2-hw/datasets/C1-P1_Train/2/"
 imglist = os.listdir(PATH_ORIGINAL_DATA)
 count = len(imglist)
 # print("count", count)
-PATH_OUTPUT_DATA = "data_mango_dev/"
-
-# logger1.info('Just for testing')
-
-from mrcnn.visualize import logging
+PATH_OUTPUT_DATA = "data_mango/"
 
 for i in range(count):
-  logging.info('count: %s', i)#print("count: ", i)
-  logging.info('image: %s', imglist[i])#print("image: ", imglist[i])
+  print("count: ", i)
+  print("image: ", imglist[i])
   filestr = imglist[i].split(".")[0]
   # print("filestr: ", filestr)
 
