@@ -220,7 +220,7 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
     if auto_show:
         plt.show()
     fig = ax.get_figure()
-    fig.savefig( path_output + filestr + ".jpg", pad_inches = 0)
+    fig.savefig( path_output + filestr + ".jpg", bbox_inches = 'tight')
 
 def display_differences(image,
                         gt_box, gt_class_id, gt_mask,
