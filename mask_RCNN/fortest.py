@@ -123,4 +123,4 @@ for i in range(1):
   # Visualize results
   print("shijian",(b-a).seconds)
   r = results[0]
-  visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'], class_names, filestr, PATH_OUTPUT_DATA, r['scores'], show_bbox=True, show_mask=True)
+  visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'], class_names, filestr, PATH_OUTPUT_DATA, r['scores'], show_bbox=False, show_mask=False)
