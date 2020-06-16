@@ -107,7 +107,7 @@ PATH_OUTPUT_DATA = "C1-P1_Train/2/"
 
 from mrcnn.visualize import logging
 
-for i in range(10):
+for i in range(count):
   logging.info('count: %s', i)#print("count: ", i)
   logging.info('image: %s', imglist[i])#print("image: ", imglist[i])
   filestr = imglist[i].split(".")[0]
