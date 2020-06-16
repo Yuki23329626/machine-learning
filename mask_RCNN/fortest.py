@@ -107,7 +107,7 @@ PATH_OUTPUT_DATA = "data_mango_dev/"
 
 from mrcnn.visualize import logging
 
-for i in range(count):
+for i in range(1):
   logging.info('count: %s', i)#print("count: ", i)
   logging.info('image: %s', imglist[i])#print("image: ", imglist[i])
   filestr = imglist[i].split(".")[0]

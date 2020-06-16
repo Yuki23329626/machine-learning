@@ -19,6 +19,7 @@ import matplotlib.pyplot as plt
 from matplotlib import patches,  lines
 from matplotlib.patches import Polygon
 import IPython.display
+import cv2
 
 # Root directory of the project
 ROOT_DIR = os.path.abspath("../")
@@ -211,6 +212,10 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
     #     plt.show()
     fig = ax.get_figure()
     fig.savefig( path_output + filestr + ".jpg")
+    img = imread(path_output + filestr + ".jpg")
+    cropped = img[y1:y2, x1:x2]
+    cv2.imwrite(path_output + filestr + ".jpg")
+
 
 
 def display_differences(image,
