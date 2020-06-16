@@ -215,12 +215,6 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
     #     plt.show()
     fig = ax.get_figure()
     fig.savefig( path_output + filestr + ".jpg")
-    img=Image.open( path_output + filestr + ".jpg")
-    box=(x1,x2,y1,y2)
-    roi=img.crop(box)
-    plt.imshow(roi),plt.axis('off')
-    plt.savefig(path_output + filestr + ".jpg")
-    plt.show()
 
 def display_differences(image,
                         gt_box, gt_class_id, gt_mask,
