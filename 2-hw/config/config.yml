@@ -13,8 +13,12 @@ DATA:
   NUM_WORKERS: 4
 
 PATH:
-  TRAIN_SET: "../hw2_dev/datasets/C1-P1_Train"
-  TEST_SET: "../hw2_dev/datasets/C1-P1_Dev"
+  TRAIN_SET: "./datasets/C1-P1_Train/2"
+  TEST_SET: "./datasets/C1-P1_Dev/1"
+  DEV_SET: "./datasets/C1-P1_Test/3"
+  TRAIN_CSV: "./datasets/train.csv"
+  TEST_CSV: "./datasets/dev.csv"
+  DEV_CSV: "./datasets/test.csv"
 
 DEVICE:
   GPU: 0

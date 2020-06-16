@@ -11,6 +11,9 @@ import cv2
 import time
 from mrcnn.config import Config
 from datetime import datetime
+
+# 本 code 是用來偵測物件(芒果)，並且去除背景後只輸出芒果(score最高的那一個)部分的圖，圖片大小會改變
+
 # Root directory of the project
 ROOT_DIR = os.getcwd()
  
@@ -27,9 +30,9 @@ from mrcnn import visualize
 # Directory to save logs and trained model
 MODEL_DIR = os.path.join(ROOT_DIR, "logs")
  
-# Local path to trained weights file
+# 使用 train 好的 weight，來進行圖片物件偵測
 COCO_MODEL_PATH = os.path.join(MODEL_DIR ,"shapes20200615T1714/mask_rcnn_shapes_0010.h5")
-# Download COCO trained weights from Releases if needed
+# 如果沒有 weight 的話，就用 coco trained weight
 if not os.path.exists(COCO_MODEL_PATH):
     utils.download_trained_weights(COCO_MODEL_PATH)
     print("cuiwei***********************")
@@ -38,6 +41,7 @@ if not os.path.exists(COCO_MODEL_PATH):
 IMAGE_DIR = os.path.join(ROOT_DIR, "images")
  
 class ShapesConfig(Config):
+    # 設定 config
     """Configuration for training on the toy shapes dataset.
     Derives from the base Config class and overrides values specific
     to the toy shapes dataset.
@@ -83,7 +87,6 @@ config = InferenceConfig()
  
 model = modellib.MaskRCNN(mode="inference", model_dir=MODEL_DIR, config=config)
  
- 
 # Create model object in inference mode.
 model = modellib.MaskRCNN(mode="inference", model_dir=MODEL_DIR, config=config)
  
@@ -96,11 +99,12 @@ model.load_weights(COCO_MODEL_PATH, by_name=True)
 class_names = ['BG', 'mango']
 # Load a random image from the images folder
 
-# 基础设置
+# 要進行轉換的原始資料 path
 PATH_ORIGINAL_DATA = "../2-hw/datasets/C1-P1_Dev/1/"
 imglist = os.listdir(PATH_ORIGINAL_DATA)
 count = len(imglist)
 # print("count", count)
+# 輸出資料 path
 PATH_OUTPUT_DATA = "C1-P1_Dev/1/"
 
 # logger1.info('Just for testing')
@@ -108,19 +112,20 @@ PATH_OUTPUT_DATA = "C1-P1_Dev/1/"
 from mrcnn.visualize import logging
 
 for i in range(count):
-  logging.info('count: %s', i)#print("count: ", i)
-  logging.info('image: %s', imglist[i])#print("image: ", imglist[i])
-  filestr = imglist[i].split(".")[0]
+  logging.info('index: %s', i)#print("count: ", i)
+  logging.info('image name: %s', imglist[i])#print("image: ", imglist[i])
+  fileName = imglist[i].split(".")[0]
   # print("filestr: ", filestr)
 
-  file_names = next(os.walk(IMAGE_DIR))[2]
-  image = skimage.io.imread(PATH_ORIGINAL_DATA + filestr + ".jpg")
+  image = skimage.io.imread(PATH_ORIGINAL_DATA + fileName + ".jpg")
  
   a=datetime.now()
   # Run detection
   results = model.detect([image], verbose=1)
   b=datetime.now()
-  # Visualize results
-  print("shijian",(b-a).seconds)
+  # 花費時間
+  logging.info('time spent: %s', (b-a).seconds)# print("time spent: ",(b-a).seconds)
   r = results[0]
-  visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'], class_names, filestr, PATH_OUTPUT_DATA, r['scores'], show_bbox=False, show_mask=True)
+
+  # 圖片偵測芒果，並轉換成芒果大圖儲存
+  visualize.convert_images(image, r['rois'], r['masks'], r['class_ids'], class_names, fileName, PATH_OUTPUT_DATA, r['scores'], show_bbox=False, show_mask=True)
