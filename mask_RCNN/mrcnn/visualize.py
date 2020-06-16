@@ -143,8 +143,8 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
 
     # Show area outside image boundaries.
     height, width = image.shape[:2]
-    ax.set_ylim(height + 10, -10)
-    ax.set_xlim(-10, width + 10)
+    # ax.set_ylim(height + 10, -10)
+    # ax.set_xlim(-10, width + 10)
     ax.axis('off')
     ax.set_title(title)
 
@@ -172,8 +172,6 @@ def display_instances(image, boxes, masks, class_ids, class_names, filestr, path
             # Skip this instance. Has no bbox. Likely lost in image cropping.
             continue
         y1, x1, y2, x2 = boxes[i]
-        ax.set_ylim(y2 - y1, 0)
-        ax.set_xlim(0, x2 - x1)
         if show_bbox:
             p = patches.Rectangle((x1, y1), x2 - x1, y2 - y1, linewidth=2,
                                 alpha=0.7, linestyle="dashed",
