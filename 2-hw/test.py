@@ -30,7 +30,7 @@ correct = 0
 count = 0
 
 import pandas as pd
-df = pd.read_csv(test_csv)
+df = pd.read_csv('./datasets/test.csv')
 filename = df["image_id"].values
 label_np = df['label'].values
 
@@ -49,7 +49,7 @@ import csv
 
 label_set = ['A', 'B', 'C']
 
-with open(test_path, 'w', newline='') as csvfile:
+with open(test_csv, 'w', newline='') as csvfile:
     # 建立 CSV 檔寫入器
     writer = csv.writer(csvfile)
     writer.writerow(['image_id', 'label'])
