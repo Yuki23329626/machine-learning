@@ -14,6 +14,10 @@ _C.DEVICE.CUDA = True # use gpu or not
 
 _C.PATH.TRAIN_SET = "./datasets/C1-P1_Train" # <path_to_trainset>
 _C.PATH.TEST_SET = "./datasets/C1-P1_Dev" # <path_to_testset>
+_C.PATH.DEV_SET =  "./datasets/C1-P1_Test"
+_C.PATH.TRAIN_CSV =  "./datasets/train.csv"
+_C.PATH.TEST_CSV =  "./datasets/dev.csv"
+_C.PATH.DEV_CSV =  "./datasets/test.csv"
 
 _C.MODEL.OUTPUT_PATH = "./weights/model.pth" # <weight_output_path>
 _C.MODEL.LR = 1e-3 # <learning_rate>
