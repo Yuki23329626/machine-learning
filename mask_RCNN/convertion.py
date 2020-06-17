@@ -100,12 +100,12 @@ class_names = ['BG', 'mango']
 # Load a random image from the images folder
 
 # 要進行轉換的原始資料 path
-PATH_ORIGINAL_DATA = "../2-hw/datasets/C1-P1_Dev-copy/1/"
+PATH_ORIGINAL_DATA = "../2-hw/datasets/C1-P1_Train-copy/"
 imglist = os.listdir(PATH_ORIGINAL_DATA)
 count = len(imglist)
 # print("count", count)
 # 輸出資料 path
-PATH_OUTPUT_DATA = "C1-P1_Dev/1/"
+PATH_OUTPUT_DATA = "C1-P1_Train/"
 
 # logger1.info('Just for testing')
 
