@@ -9,7 +9,7 @@ _C.MODEL = CN()
 _C.DEVICE = CN()
 _C.DATA = CN()
 
-_C.DEVICE.GPU = 1 # <gpu_id>
+_C.DEVICE.GPU = 0 # <gpu_id>
 _C.DEVICE.CUDA = True # use gpu or not
 
 _C.PATH.TRAIN_SET = "./datasets/C1-P1_Train"
