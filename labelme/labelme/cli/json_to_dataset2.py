@@ -13,7 +13,7 @@ import yaml
 
 # labelme 將 json 檔案轉換之後儲存的目的地 path
 # 最後會將檔案分到三個資料夾
-dataset_root_path = "/home/michael/machine-learning/mask_RCNN/samples/trinmy/myinfo/"
+dataset_root_path = "/home/nxshen/machine-learning/mask_RCNN/samples/trinmy/myinfo/"
 PATH_ORIGINAL_DATA = dataset_root_path + "json/"
 img_floder = dataset_root_path + "pic/"
 mask_floder = dataset_root_path + "cv2_mask/"
