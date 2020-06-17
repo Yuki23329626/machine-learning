@@ -30,7 +30,7 @@ correct = 0
 count = 0
 
 import pandas as pd
-df = pd.read_csv('./datasets/test_example.csv')
+df = pd.read_csv(test_csv)
 filename = df["image_id"].values
 label_np = df['label'].values
 
