@@ -6,7 +6,8 @@ results/
 temp/
 test/
 mask_rcnn_coco.h5
-data_mango/
+data_mango*
+C1-P1_*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
