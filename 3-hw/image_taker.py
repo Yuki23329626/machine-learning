@@ -12,10 +12,11 @@ from torch.autograd import Variable
 import numpy as np
 import shutil
 
-img_list = list()
+img_list = []
 dirPath = "lfw/"
 dir_list = os.listdir(dirPath)
 for i in range(len(dir_list)):
   if os.path.isdir(dirPath + dir_list[i]):
-    img_list = img_list.append(os.listdir(dirPath + dir_list[i]))
-    print(img_list)
+    img_list = os.listdir(dirPath + dir_list[i])
+    for j in range(len(img_list)):
+      print(dirPath + dir_list[i] + '/' + img_list[j])
