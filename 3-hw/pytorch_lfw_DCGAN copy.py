@@ -161,13 +161,13 @@ transform = transforms.Compose([
         transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
 ])
 
-data_dir = '/home/nxshen/machine-learning/3-hw/resized_celebA/'          # this path depends on your computer
+data_dir = '/home/nxshen/machine-learning/3-hw/resized_lfw/'          # this path depends on your computer
 
 dset = datasets.ImageFolder(data_dir, transform)
 train_loader = torch.utils.data.DataLoader(dset, batch_size=128, shuffle=True)
 temp = plt.imread(train_loader.dataset.imgs[0][0])
 if (temp.shape[0] != img_size) or (temp.shape[0] != img_size):
-    sys.stderr.write('Error! image size is not 64 x 64! run \"celebA_data_preprocess.py\" !!!')
+    sys.stderr.write('Error! image size is not 64 x 64! run \"lfw_data_preprocess.py\" !!!')
     sys.exit(1)
 
 # network
@@ -186,12 +186,12 @@ G_optimizer = optim.Adam(G.parameters(), lr=lr, betas=(0.5, 0.999))
 D_optimizer = optim.Adam(D.parameters(), lr=lr, betas=(0.5, 0.999))
 
 # results save folder
-if not os.path.isdir('CelebA_DCGAN_results'):
-    os.mkdir('CelebA_DCGAN_results')
-if not os.path.isdir('CelebA_DCGAN_results/Random_results'):
-    os.mkdir('CelebA_DCGAN_results/Random_results')
-if not os.path.isdir('CelebA_DCGAN_results/Fixed_results'):
-    os.mkdir('CelebA_DCGAN_results/Fixed_results')
+if not os.path.isdir('lfw_DCGAN_results'):
+    os.mkdir('lfw_DCGAN_results')
+if not os.path.isdir('lfw_DCGAN_results/Random_results'):
+    os.mkdir('lfw_DCGAN_results/Random_results')
+if not os.path.isdir('lfw_DCGAN_results/Fixed_results'):
+    os.mkdir('lfw_DCGAN_results/Fixed_results')
 
 train_hist = {}
 train_hist['D_losses'] = []
@@ -275,8 +275,8 @@ for epoch in range(train_epoch):
 
     print('[%d/%d] - ptime: %.2f, loss_d: %.3f, loss_g: %.3f' % ((epoch + 1), train_epoch, per_epoch_ptime, torch.mean(torch.FloatTensor(D_losses)),
                                                               torch.mean(torch.FloatTensor(G_losses))))
-    p = 'CelebA_DCGAN_results/Random_results/CelebA_DCGAN_' + str(epoch + 1) + '.png'
-    fixed_p = 'CelebA_DCGAN_results/Fixed_results/CelebA_DCGAN_' + str(epoch + 1) + '.png'
+    p = 'lfw_DCGAN_results/Random_results/lfw_DCGAN_' + str(epoch + 1) + '.png'
+    fixed_p = 'lfw_DCGAN_results/Fixed_results/lfw_DCGAN_' + str(epoch + 1) + '.png'
     with torch.no_grad():
         show_result((epoch+1), save=True, path=p, isFix=False)
         show_result((epoch+1), save=True, path=fixed_p, isFix=True)
@@ -290,15 +290,15 @@ train_hist['total_ptime'].append(total_ptime)
 
 print("Avg per epoch ptime: %.2f, total %d epochs ptime: %.2f" % (torch.mean(torch.FloatTensor(train_hist['per_epoch_ptimes'])), train_epoch, total_ptime))
 print("Training finish!... save training results")
-torch.save(G.state_dict(), "CelebA_DCGAN_results/generator_param.pkl")
-torch.save(D.state_dict(), "CelebA_DCGAN_results/discriminator_param.pkl")
-with open('CelebA_DCGAN_results/train_hist.pkl', 'wb') as f:
+torch.save(G.state_dict(), "lfw_DCGAN_results/generator_param.pkl")
+torch.save(D.state_dict(), "lfw_DCGAN_results/discriminator_param.pkl")
+with open('lfw_DCGAN_results/train_hist.pkl', 'wb') as f:
     pickle.dump(train_hist, f)
 
-show_train_hist(train_hist, save=True, path='CelebA_DCGAN_results/CelebA_DCGAN_train_hist.png')
+show_train_hist(train_hist, save=True, path='lfw_DCGAN_results/lfw_DCGAN_train_hist.png')
 
 images = []
 for e in range(train_epoch):
-    img_name = 'CelebA_DCGAN_results/Fixed_results/CelebA_DCGAN_' + str(e + 1) + '.png'
+    img_name = 'lfw_DCGAN_results/Fixed_results/lfw_DCGAN_' + str(e + 1) + '.png'
     images.append(imageio.imread(img_name))
-imageio.mimsave('CelebA_DCGAN_results/generation_animation.gif', images, fps=5)
+imageio.mimsave('lfw_DCGAN_results/generation_animation.gif', images, fps=5)

@@ -20,3 +20,4 @@ for i in range(len(dir_list)):
     img_list = os.listdir(dirPath + dir_list[i])
     for j in range(len(img_list)):
       print(dirPath + dir_list[i] + '/' + img_list[j])
+      shutil.move(dirPath + dir_list[i] + '/' + img_list[j], dirPath)
