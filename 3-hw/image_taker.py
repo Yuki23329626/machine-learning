@@ -10,7 +10,10 @@ import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.autograd import Variable
 import numpy as np
+import shutil
 
 dirPath = "lfw/"
 img_list = os.listdir(dirPath)
-print(img_list)
+for i in img_list:
+  if os.isdir(dirPath + img_list[i]):
+    shutil.copyfile(dirPath + img_list[i]+ '/*', dirPath)
