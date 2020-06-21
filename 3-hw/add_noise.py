@@ -173,7 +173,7 @@ G.cuda()
 G.load_state_dict(torch.load('CelebA_DCGAN_results/generator_param.pkl'))
 
 result_path = 'hw3-3/'
-fixed_p = result_path + 'N(-10,1)' + '.png'
+fixed_p = result_path + 'U(0,1)' + '.png'
 
 if not os.path.isdir(result_path):
     os.mkdir(result_path)
