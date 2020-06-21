@@ -1,0 +1,16 @@
+import os, time, sys
+import matplotlib.pyplot as plt
+import itertools
+import pickle
+import imageio
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+from torchvision import datasets, transforms
+from torch.autograd import Variable
+import numpy as np
+
+a = torch.randn((5 * 5, 3))
+
+print (a)
