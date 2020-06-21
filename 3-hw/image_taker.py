@@ -16,5 +16,5 @@ results = next(os.walk(dirPath))[2]
 
 for i in results:
   result = next(os.walk(i[0]+i[2]))[2]
-  print(result)
+  print(i)
 
