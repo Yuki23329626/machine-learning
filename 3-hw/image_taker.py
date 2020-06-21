@@ -14,7 +14,7 @@ import shutil
 
 dirPath = "lfw/"
 dir_list = os.listdir(dirPath)
-for i in range(len(img_list)):
+for i in range(len(dir_list)):
   if os.path.isdir(dirPath + dir_list[i]):
     img_list = os.listdir(dirPath + dir_list[i])
     print(img_list)
