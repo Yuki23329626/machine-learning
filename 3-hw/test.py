@@ -11,6 +11,6 @@ from torchvision import datasets, transforms
 from torch.autograd import Variable
 import numpy as np
 
-a = torch.randn((5 * 5, 3))
+a = torch.randn((5 * 5, 100)) 
 
 print (a)
