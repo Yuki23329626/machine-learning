@@ -79,7 +79,8 @@ def normal_init(m, mean, std):
 
 mu = 0
 sigma = 1
-fixed_z_ = torch.normal(mu, sigma, (5 * 5, 100)).view(-1, 100, 1, 1)    # fixed noise
+# fixed_z_ = torch.normal(mu, sigma, (5 * 5, 100)).view(-1, 100, 1, 1)    # normal distribution noise
+fixed_z_ = torch.uniform_((5 * 5, 100), 0, 1).view(-1, 100, 1, 1)    # uniform distribution noise
 fixed_z_ = fixed_z_.cuda()
 
 def show_result(num_epoch, show = False, save = False, path = 'result.png', isFix=True):
