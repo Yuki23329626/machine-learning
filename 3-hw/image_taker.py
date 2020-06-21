@@ -12,5 +12,5 @@ from torch.autograd import Variable
 import numpy as np
 
 dirPath = "lfw/"
-results = next(os.walk(dirPath))
-print(results)
+img_list = os.listdir(root)next(os.walk(dirPath))
+print(img_list)
