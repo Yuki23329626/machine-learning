@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.misc import imresize
 
 # root path depends on your computer
-root = '/home/nxshen/machine-learning/3-hw/data/'
+root = '/home/nxshen/machine-learning/3-hw/lfw/'
 save_root = '/home/nxshen/machine-learning/3-hw/resized_lfw/'
 resize_size = 64
 
