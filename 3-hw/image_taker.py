@@ -13,4 +13,4 @@ import numpy as np
 
 dirPath = "lfw/"
 results = next(os.walk(dirPath))
-print( results[0] + results[1] + results[2] + '.jpg')
+print( results[0][0] + results[1][0] + results[2][0] + '.jpg')
