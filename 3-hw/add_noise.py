@@ -79,8 +79,8 @@ def normal_init(m, mean, std):
 
 mu = 0
 sigma = 1
-# fixed_z_ = torch.normal(mu, sigma, (5 * 5, 100)).view(-1, 100, 1, 1)    # normal distribution noise
-fixed_z_ = torch.empty(5 * 5, 100).uniform_(0, 1).view(-1, 100, 1, 1)    # uniform distribution noise
+fixed_z_ = torch.normal(mu, sigma, (5 * 5, 100)).view(-1, 100, 1, 1)    # normal distribution noise
+# fixed_z_ = torch.empty(5 * 5, 100).uniform_(0, 1).view(-1, 100, 1, 1)    # uniform distribution noise
 fixed_z_ = fixed_z_.cuda()
 
 def show_result(num_epoch, show = False, save = False, path = 'result.png', isFix=True):
@@ -173,7 +173,7 @@ G.cuda()
 G.load_state_dict(torch.load('CelebA_DCGAN_results/generator_param.pkl'))
 
 result_path = 'hw3-3/'
-fixed_p = result_path + 'U(0,1)' + '.png'
+fixed_p = result_path + 'N(-10,1)' + '.png'
 
 if not os.path.isdir(result_path):
     os.mkdir(result_path)
