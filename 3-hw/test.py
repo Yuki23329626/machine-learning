@@ -11,6 +11,7 @@ from torchvision import datasets, transforms
 from torch.autograd import Variable
 import numpy as np
 
-a = torch.randn((5 * 5, 100)) 
+fixed_z_ = torch.randn((5 * 5, 100)).view(-1, 100, 1, 1)    # fixed noise
 
-print (a)
+print ("fixed_z_:", fixed_z_)
+print ("fixed_z_.shape", fixed_z_.shape)
