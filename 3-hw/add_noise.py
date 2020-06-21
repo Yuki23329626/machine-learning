@@ -80,7 +80,7 @@ def show_result(num_epoch, show = False, save = False, path = 'result.png', isFi
         plt.close()
 
 noise_hw3_3_1 = torch.normal(0, 1, (5 * 5, 100)).view(-1, 100, 1, 1)    # normal distribution noise
-noise_hw3_3_2 = torch.normal(0, 1, (5 * 5, 100)).view(-1, 100, 1, 1)    # normal distribution noise
+noise_hw3_3_2 = torch.normal(-10, 1, (5 * 5, 100)).view(-1, 100, 1, 1)    # normal distribution noise
 noise_hw3_3_3 = torch.empty(5 * 5, 100).uniform_(0, 1).view(-1, 100, 1, 1)    # uniform distribution noise
 
 noise_hw3_3_1 = noise_hw3_3_1.cuda()
