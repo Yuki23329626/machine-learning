@@ -12,5 +12,5 @@ from torch.autograd import Variable
 import numpy as np
 
 dirPath = "lfw/"
-result = next(os.walk(dirPath))[2]
+result = next(os.walk(dirPath))
 print(result)
