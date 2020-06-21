@@ -12,9 +12,5 @@ from torch.autograd import Variable
 import numpy as np
 
 dirPath = "lfw/"
-results = next(os.walk(dirPath))[2]
-
-for i in results:
-  result = next(os.walk(i[0]+i[2]))[2]
-  print(i)
-
+results = next(os.walk(dirPath))[0]
+print(result)
