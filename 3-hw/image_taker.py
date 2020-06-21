@@ -12,5 +12,5 @@ from torch.autograd import Variable
 import numpy as np
 
 dirPath = "lfw/"
-result = next(os.walk(dirPath))
+result = [f for f in os.listdir(dirPath) if os.path.isfile(os.path.join(dirPath, f))]
 print(result)
