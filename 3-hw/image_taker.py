@@ -11,7 +11,10 @@ from torchvision import datasets, transforms
 from torch.autograd import Variable
 import numpy as np
 
-dirPath = "lfw"
-result = next(os.walk(dirPath))[2]
-result = next(os.walk(result))[2]
-print(result)
+dirPath = "lfw/"
+results = next(os.walk(dirPath))[2]
+
+for i in results:
+  result = next(os.walk(i))[2]
+  print(result)
+
