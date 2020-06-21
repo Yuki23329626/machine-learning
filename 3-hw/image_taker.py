@@ -11,6 +11,6 @@ from torchvision import datasets, transforms
 from torch.autograd import Variable
 import numpy as np
 
-dirPath = "lfw/"
-result = next(os.walk(dirPath))[1]
+dirPath = "lfw/Aaron_Eckhart"
+result = next(os.walk(dirPath))[2]
 print(result)
