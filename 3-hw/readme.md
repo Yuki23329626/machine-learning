@@ -91,7 +91,7 @@ U(0,1):
 所以才導致圖片有這樣的結果  
 ![](https://i.imgur.com/y2jHYJ0.png)  
   
-## 3、HW3_3  
+## 4、HW3_4  
 以下是使用外部人臉dataset的結果  
 使用的是"Labeled Faces in the Wild" 這個 dataset，一共取用了13233 張照片來訓練  
 一樣分別列出STEP為0, 50, 100, 200時候的訓練結果  
