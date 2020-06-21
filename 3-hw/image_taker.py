@@ -15,5 +15,5 @@ import shutil
 dirPath = "lfw/"
 img_list = os.listdir(dirPath)
 for i in range(len(img_list)):
-  if os.path.isdir(img_list[i]):
+  if os.path.isdir(dirPath + img_list[i]):
     shutil.copyfile(dirPath + img_list[i]+ '/*', dirPath)
