@@ -168,6 +168,10 @@ G.cuda()
 # 讀訓練好的模型參數
 G.load_state_dict(torch.load('CelebA_DCGAN_results/generator_param.pkl'))
 
-fixed_p = 'hw3-3/' + 'N(0,1)' + '.png'
+result_path = 'hw3-3/'
+fixed_p = result_path + 'N(0,1)' + '.png'
+
+if not os.path.isdir(result_path):
+    os.mkdir(result_path)
 
 show_result(200, save=True, path=fixed_p, isFix=True)
