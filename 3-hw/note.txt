@@ -1,0 +1,7 @@
+目前有的東西
+訓練好的model
+
+要做甚麼
+load trained model
+改noise
+生成圖片
