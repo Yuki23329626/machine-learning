@@ -13,7 +13,8 @@ import numpy as np
 import shutil
 
 dirPath = "lfw/"
-img_list = os.listdir(dirPath)
+dir_list = os.listdir(dirPath)
 for i in range(len(img_list)):
-  if os.path.isdir(dirPath + img_list[i]):
-    shutil.copyfile(dirPath + img_list[i]+ '/*', dirPath)
+  if os.path.isdir(dirPath + dir_list[i]):
+    img_list = os.listdir(dirPath + dir_list[i])
+    print(img_list)
