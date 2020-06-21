@@ -12,7 +12,7 @@ from torch.autograd import Variable
 import numpy as np
 import shutil
 
-img_list = []
+img_list = list()
 dirPath = "lfw/"
 dir_list = os.listdir(dirPath)
 for i in range(len(dir_list)):
