@@ -44,52 +44,16 @@ class generator(nn.Module):
 
         return x
 
-class discriminator(nn.Module):
-    # initializers
-    def __init__(self, d=128):
-        super(discriminator, self).__init__()
-        self.conv1 = nn.Conv2d(3, d, 4, 2, 1)
-        self.conv2 = nn.Conv2d(d, d*2, 4, 2, 1)
-        self.conv2_bn = nn.BatchNorm2d(d*2)
-        self.conv3 = nn.Conv2d(d*2, d*4, 4, 2, 1)
-        self.conv3_bn = nn.BatchNorm2d(d*4)
-        self.conv4 = nn.Conv2d(d*4, d*8, 4, 2, 1)
-        self.conv4_bn = nn.BatchNorm2d(d*8)
-        self.conv5 = nn.Conv2d(d*8, 1, 4, 1, 0)
-
-    # weight_init
-    def weight_init(self, mean, std):
-        for m in self._modules:
-            normal_init(self._modules[m], mean, std)
-
-    # forward method
-    def forward(self, input):
-        x = F.leaky_relu(self.conv1(input), 0.2)
-        x = F.leaky_relu(self.conv2_bn(self.conv2(x)), 0.2)
-        x = F.leaky_relu(self.conv3_bn(self.conv3(x)), 0.2)
-        x = F.leaky_relu(self.conv4_bn(self.conv4(x)), 0.2)
-        x = torch.sigmoid(self.conv5(x))
-
-        return x
-
-def normal_init(m, mean, std):
-    if isinstance(m, nn.ConvTranspose2d) or isinstance(m, nn.Conv2d):
-        m.weight.data.normal_(mean, std)
-        m.bias.data.zero_()
-
-mu = 0
-sigma = 1
-fixed_z_ = torch.normal(mu, sigma, (5 * 5, 100)).view(-1, 100, 1, 1)    # normal distribution noise
-# fixed_z_ = torch.empty(5 * 5, 100).uniform_(0, 1).view(-1, 100, 1, 1)    # uniform distribution noise
+fixed_z_ = torch.randn((5 * 5, 100)).view(-1, 100, 1, 1)    # fixed noise
 fixed_z_ = fixed_z_.cuda()
 
-def show_result(num_epoch, show = False, save = False, path = 'result.png', isFix=True):
+def show_result(num_epoch, show = False, save = False, path = 'result.png', isFix=True, noise=fixed_z_):
     z_ = torch.randn((5*5, 100)).view(-1, 100, 1, 1)
     z_ = z_.cuda()
 
     G.eval()
     if isFix:
-        test_images = G(fixed_z_)
+        test_images = G(noise)
     else:
         test_images = G(z_)
     G.train()
@@ -115,67 +79,28 @@ def show_result(num_epoch, show = False, save = False, path = 'result.png', isFi
     else:
         plt.close()
 
+noise_hw3_3_1 = torch.normal(0, 1, (5 * 5, 100)).view(-1, 100, 1, 1)    # normal distribution noise
+noise_hw3_3_2 = torch.normal(0, 1, (5 * 5, 100)).view(-1, 100, 1, 1)    # normal distribution noise
+noise_hw3_3_3 = torch.empty(5 * 5, 100).uniform_(0, 1).view(-1, 100, 1, 1)    # uniform distribution noise
 
-def show_train_hist(hist, show = False, save = False, path = 'Train_hist.png'):
-    x = range(len(hist['D_losses']))
-
-    y1 = hist['D_losses']
-    y2 = hist['G_losses']
-
-    plt.plot(x, y1, label='D_loss')
-    plt.plot(x, y2, label='G_loss')
-
-    plt.xlabel('Iter')
-    plt.ylabel('Loss')
-
-    plt.legend(loc=4)
-    plt.grid(True)
-    plt.tight_layout()
-
-    if save:
-        plt.savefig(path)
-
-    if show:
-        plt.show()
-    else:
-        plt.close()
-
-# training parameters
-batch_size = 128
-lr = 0.0002
-train_epoch = 200
-
-# data_loader
-img_size = 64
-isCrop = False
-if isCrop:
-    transform = transforms.Compose([
-        transforms.Scale(108),
-        transforms.ToTensor(),
-        transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
-    ])
-else:
-    transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
-    ])
-transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
-])
-
-mu = -10
-sigma = 1
+noise_hw3_3_1 = noise_hw3_3_1.cuda()
+noise_hw3_3_2 = noise_hw3_3_2.cuda()
+noise_hw3_3_3 = noise_hw3_3_3.cuda()
 
 G = generator(128)
 G.cuda()
+
 # 讀訓練好的模型參數
 G.load_state_dict(torch.load('CelebA_DCGAN_results/generator_param.pkl'))
 
 result_path = 'hw3-3/'
-fixed_p = result_path + 'N(-10,1)' + '.png'
+result_img1 = result_path + 'N(0,1)' + '.png'
+result_img2 = result_path + 'N(-10,1)' + '.png'
+result_img3 = result_path + 'U(0,1)' + '.png'
 
 if not os.path.isdir(result_path):
     os.mkdir(result_path)
 
-show_result(200, save=True, path=fixed_p, isFix=True)
+show_result(200, save=True, path=result_img1, isFix=True, noise=noise_hw3_3_1)
+show_result(200, save=True, path=result_img2, isFix=True, noise=noise_hw3_3_2)
+show_result(200, save=True, path=result_img3, isFix=True, noise=noise_hw3_3_3)
