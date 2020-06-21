@@ -13,4 +13,4 @@ import numpy as np
 
 dirPath = "lfw/"
 results = next(os.walk(dirPath))[0]
-print(result)
+print(results)
