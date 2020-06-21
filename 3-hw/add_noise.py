@@ -163,13 +163,16 @@ transform = transforms.Compose([
         transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
 ])
 
+mu = -10
+sigma = 1
+
 G = generator(128)
 G.cuda()
 # 讀訓練好的模型參數
 G.load_state_dict(torch.load('CelebA_DCGAN_results/generator_param.pkl'))
 
 result_path = 'hw3-3/'
-fixed_p = result_path + 'N(0,1)' + '.png'
+fixed_p = result_path + 'N(-10,1)' + '.png'
 
 if not os.path.isdir(result_path):
     os.mkdir(result_path)
