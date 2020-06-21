@@ -168,7 +168,7 @@ data_dir = '/home/nxshen/machine-learning/3-hw/resized_celebA/'          # this 
 G = generator(128)
 G.cuda()
 # 讀訓練好的模型參數
-G.load_state_dict(torch.load('generator_param.pkl'))
+G.load_state_dict(torch.load(data_dir + 'CelebA_DCGAN_results/generator_param.pkl'))
 
 fixed_p = 'hw3-3/' + 'N(0,1)' + '.png'
 
