@@ -11,6 +11,33 @@ from torchvision import datasets, transforms
 from torch.autograd import Variable
 import numpy as np
 
+import logging
+
+# set up logging to file - see previous section for more details
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+                    datefmt='%m-%d %H:%M',
+                    filename='log.2-hw.train',
+                    filemode='w')
+
+# define a Handler which writes INFO messages or higher to the sys.stderr
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+# set a format which is simpler for console use
+formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
+# tell the handler to use this format
+console.setFormatter(formatter)
+# add the handler to the root logger
+logging.getLogger().addHandler(console)
+
+# Now, we can log to the root logger, or any other logger. First the root...
+# logging.info('just for test')
+
+# Now, define a couple of other loggers which might represent areas in your
+# application:
+
+logger1 = logging.getLogger('3-hw.pytorch_lfw_DCGAN.py')
+
 #torch.cuda.set_device(1)
 
 # G(z)
@@ -273,8 +300,10 @@ for epoch in range(train_epoch):
     per_epoch_ptime = epoch_end_time - epoch_start_time
 
 
-    print('[%d/%d] - ptime: %.2f, loss_d: %.3f, loss_g: %.3f' % ((epoch + 1), train_epoch, per_epoch_ptime, torch.mean(torch.FloatTensor(D_losses)),
-                                                              torch.mean(torch.FloatTensor(G_losses))))
+    # print('[%d/%d] - ptime: %.2f, loss_d: %.3f, loss_g: %.3f' % ((epoch + 1), train_epoch, per_epoch_ptime, torch.mean(torch.FloatTensor(D_losses)),
+    #                                                           torch.mean(torch.FloatTensor(G_losses))))
+    logger1.log('[%d/%d] - ptime: %.2f, loss_d: %.3f, loss_g: %.3f', (epoch + 1), train_epoch, per_epoch_ptime, torch.mean(torch.FloatTensor(D_losses)),
+                                                              torch.mean(torch.FloatTensor(G_losses)))
     p = 'lfw_DCGAN_results/Random_results/lfw_DCGAN_' + str(epoch + 1) + '.png'
     fixed_p = 'lfw_DCGAN_results/Fixed_results/lfw_DCGAN_' + str(epoch + 1) + '.png'
     with torch.no_grad():
@@ -288,8 +317,10 @@ end_time = time.time()
 total_ptime = end_time - start_time
 train_hist['total_ptime'].append(total_ptime)
 
-print("Avg per epoch ptime: %.2f, total %d epochs ptime: %.2f" % (torch.mean(torch.FloatTensor(train_hist['per_epoch_ptimes'])), train_epoch, total_ptime))
-print("Training finish!... save training results")
+# print("Avg per epoch ptime: %.2f, total %d epochs ptime: %.2f" % (torch.mean(torch.FloatTensor(train_hist['per_epoch_ptimes'])), train_epoch, total_ptime))
+logger1.log("Avg per epoch ptime: %.2f, total %d epochs ptime: %.2f", torch.mean(torch.FloatTensor(train_hist['per_epoch_ptimes'])), train_epoch, total_ptime)
+# print("Training finish!... save training results")
+logger1.log("Training finish!... save training results")
 torch.save(G.state_dict(), "lfw_DCGAN_results/generator_param.pkl")
 torch.save(D.state_dict(), "lfw_DCGAN_results/discriminator_param.pkl")
 with open('lfw_DCGAN_results/train_hist.pkl', 'wb') as f:
