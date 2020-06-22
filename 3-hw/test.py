@@ -28,3 +28,5 @@ def find_dir(path):
             find_dir(full_path)
         else:
             print('檔案:',full_path)
+
+find_dir('../')
