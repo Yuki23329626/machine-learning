@@ -17,7 +17,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
                     datefmt='%m-%d %H:%M',
-                    filename='log.2-hw.train',
+                    filename='log.pytorch_lfw_DCGAN.py',
                     filemode='w')
 
 # define a Handler which writes INFO messages or higher to the sys.stderr
@@ -227,6 +227,7 @@ train_hist['per_epoch_ptimes'] = []
 train_hist['total_ptime'] = []
 
 print('Training start!')
+logger1.log('Training start!')
 start_time = time.time()
 for epoch in range(train_epoch):
     D_losses = []
