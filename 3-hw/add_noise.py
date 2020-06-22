@@ -101,6 +101,6 @@ result_img3 = result_path + 'U(0,1)' + '.png'
 if not os.path.isdir(result_path):
     os.mkdir(result_path)
 
-show_result(200, save=True, path=result_img1, isFix=True, noise=noise_hw3_3_1)
-show_result(200, save=True, path=result_img2, isFix=True, noise=noise_hw3_3_2)
-show_result(200, save=True, path=result_img3, isFix=True, noise=noise_hw3_3_3)
+show_result(200+1, save=True, path=result_img1, isFix=True, noise=noise_hw3_3_1)
+show_result(200+1, save=True, path=result_img2, isFix=True, noise=noise_hw3_3_2)
+show_result(200+1, save=True, path=result_img3, isFix=True, noise=noise_hw3_3_3)
