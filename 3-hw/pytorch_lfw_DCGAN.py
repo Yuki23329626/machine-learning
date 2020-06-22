@@ -302,8 +302,7 @@ for epoch in range(train_epoch):
 
     # print('[%d/%d] - ptime: %.2f, loss_d: %.3f, loss_g: %.3f' % ((epoch + 1), train_epoch, per_epoch_ptime, torch.mean(torch.FloatTensor(D_losses)),
     #                                                           torch.mean(torch.FloatTensor(G_losses))))
-    logger1.log('[%d/%d] - ptime: %.2f, loss_d: %.3f, loss_g: %.3f', (epoch + 1), train_epoch, per_epoch_ptime, torch.mean(torch.FloatTensor(D_losses)),
-                                                              torch.mean(torch.FloatTensor(G_losses)))
+    logger1.log('[%d/%d] - ptime: %.2f, loss_d: %.3f, loss_g: %.3f', (epoch + 1), train_epoch, per_epoch_ptime, torch.mean(torch.FloatTensor(D_losses)), torch.mean(torch.FloatTensor(G_losses)))
     p = 'lfw_DCGAN_results/Random_results/lfw_DCGAN_' + str(epoch + 1) + '.png'
     fixed_p = 'lfw_DCGAN_results/Fixed_results/lfw_DCGAN_' + str(epoch + 1) + '.png'
     with torch.no_grad():
