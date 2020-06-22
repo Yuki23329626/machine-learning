@@ -102,8 +102,7 @@ for epoch in range(1, epochs+1):
     train_loss /= int(np.floor(len(train_loader.dataset) * (1 - valid_size)))
     valid_loss /= int(np.floor(len(valid_loader.dataset) * valid_size))
     print('Epoch: {}, Training Loss: {:.4f}, Validation Loss: {:.4f}'.format(epoch, train_loss, valid_loss))
-    logging.info("Training Loss: %s", train_loss)
-    logging.info("Validation Loss: %s", valid_loss)
+    logging.info("Epoch: %s, Training Loss: %s, Validation Loss: %s",epoch, train_loss, valid_loss)
     training_loss = np.append(training_loss, train_loss)
     validation_loss = np.append(validation_loss, valid_loss)
 
