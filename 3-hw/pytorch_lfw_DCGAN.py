@@ -227,7 +227,7 @@ train_hist['per_epoch_ptimes'] = []
 train_hist['total_ptime'] = []
 
 print('Training start!')
-logger1.log('Training start!')
+logger1.info('Training start!')
 start_time = time.time()
 for epoch in range(train_epoch):
     D_losses = []
@@ -303,7 +303,7 @@ for epoch in range(train_epoch):
 
     # print('[%d/%d] - ptime: %.2f, loss_d: %.3f, loss_g: %.3f' % ((epoch + 1), train_epoch, per_epoch_ptime, torch.mean(torch.FloatTensor(D_losses)),
     #                                                           torch.mean(torch.FloatTensor(G_losses))))
-    logger1.log('[%d/%d] - ptime: %.2f, loss_d: %.3f, loss_g: %.3f', (epoch + 1), train_epoch, per_epoch_ptime, torch.mean(torch.FloatTensor(D_losses)), torch.mean(torch.FloatTensor(G_losses)))
+    logger1.info('[%d/%d] - ptime: %.2f, loss_d: %.3f, loss_g: %.3f', (epoch + 1), train_epoch, per_epoch_ptime, torch.mean(torch.FloatTensor(D_losses)), torch.mean(torch.FloatTensor(G_losses)))
     p = 'lfw_DCGAN_results/Random_results/lfw_DCGAN_' + str(epoch + 1) + '.png'
     fixed_p = 'lfw_DCGAN_results/Fixed_results/lfw_DCGAN_' + str(epoch + 1) + '.png'
     with torch.no_grad():
@@ -318,9 +318,9 @@ total_ptime = end_time - start_time
 train_hist['total_ptime'].append(total_ptime)
 
 # print("Avg per epoch ptime: %.2f, total %d epochs ptime: %.2f" % (torch.mean(torch.FloatTensor(train_hist['per_epoch_ptimes'])), train_epoch, total_ptime))
-logger1.log("Avg per epoch ptime: %.2f, total %d epochs ptime: %.2f", torch.mean(torch.FloatTensor(train_hist['per_epoch_ptimes'])), train_epoch, total_ptime)
+logger1.info("Avg per epoch ptime: %.2f, total %d epochs ptime: %.2f", torch.mean(torch.FloatTensor(train_hist['per_epoch_ptimes'])), train_epoch, total_ptime)
 # print("Training finish!... save training results")
-logger1.log("Training finish!... save training results")
+logger1.info("Training finish!... save training results")
 torch.save(G.state_dict(), "lfw_DCGAN_results/generator_param.pkl")
 torch.save(D.state_dict(), "lfw_DCGAN_results/discriminator_param.pkl")
 with open('lfw_DCGAN_results/train_hist.pkl', 'wb') as f:
