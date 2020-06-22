@@ -104,8 +104,8 @@ for epoch in range(1, epochs+1):
     print('Epoch: {}, Training Loss: {:.4f}, Validation Loss: {:.4f}'.format(epoch, train_loss, valid_loss))
     logging.info("Training Loss: %s", train_loss)
     logging.info("Validation Loss: %s", valid_loss)
-    training_loss = training_loss.extend(train_loss)
-    validation_loss = validation_loss.extend(valid_loss)
+    training_loss = np.append(training_loss, train_loss)
+    validation_loss = np.append(validation_loss, valid_loss)
 
 show_train_hist(training_loss, validation_loss, save=True)
 
