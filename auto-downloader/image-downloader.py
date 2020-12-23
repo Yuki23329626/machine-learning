@@ -4,18 +4,18 @@ import urllib.request
 import os
 
 # 存圖位置
-local_path = r'D:/machine-learning/auto-downloader/landscape_imgs'
+local_path = 'D:\machine-learning\auto-downloader\landscape_imgs'
 # 爬取頁面網址 
 url = 'https://pic.sogou.com/pics?query=%EFL%BE%B0&di=2&_asf=pic.sogou.com&w=05009900'  
   
 # 目標元素的xpath
 xpath = '//div[@id="imgid"]/ul/li/a/img'
 # 啟動chrome瀏覽器
-chromeDriver = r'C:/Users/micha/Downloads/chromedriver.exe' # chromedriver檔案放的位置，請自行下載 chromeDriver， google 搜尋 "chromeDriver" 即可，請下載當前 chrome 版本的 Driver
+chromeDriver = 'D:\github\chromedriver.exe' # chromedriver檔案放的位置，請自行下載 chromeDriver， google 搜尋 "chromeDriver" 即可，請下載當前 chrome 版本的 Driver
 driver = webdriver.Chrome(chromeDriver) 
   
 # 最大化窗口，因為每一次爬取只能看到視窗内的圖片  
-driver.maximize_window()  
+driver.maximize_window()
   
 # 紀錄下載過的圖片網址，避免重複下載  
 img_url_dic = {}  
