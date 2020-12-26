@@ -1,0 +1,133 @@
+06-22 10:09 2-hw.train.py INFO     Epoch: 1, Training Loss: 0.9669197792453426, Validation Loss: 0.8837702061448779
+06-22 10:10 2-hw.train.py INFO     Epoch: 2, Training Loss: 0.8652952068618366, Validation Loss: 0.8184290868895394
+06-22 10:11 2-hw.train.py INFO     Epoch: 3, Training Loss: 0.8229871557227203, Validation Loss: 0.8048538437911442
+06-22 10:13 2-hw.train.py INFO     Epoch: 4, Training Loss: 0.8155481549245971, Validation Loss: 0.8122966502393995
+06-22 10:14 2-hw.train.py INFO     Epoch: 5, Training Loss: 0.7852371015719005, Validation Loss: 0.7919784315994808
+06-22 10:15 2-hw.train.py INFO     Epoch: 6, Training Loss: 0.7900629091475692, Validation Loss: 0.7962689442293984
+06-22 10:17 2-hw.train.py INFO     Epoch: 7, Training Loss: 0.7656187085168702, Validation Loss: 0.7852976726634162
+06-22 10:18 2-hw.train.py INFO     Epoch: 8, Training Loss: 0.7647140164460454, Validation Loss: 0.7908057847193309
+06-22 10:19 2-hw.train.py INFO     Epoch: 9, Training Loss: 0.7564118589673724, Validation Loss: 0.8154072442225048
+06-22 10:20 2-hw.train.py INFO     Epoch: 10, Training Loss: 0.7530241720378399, Validation Loss: 0.8145292145865304
+06-22 10:21 2-hw.train.py INFO     Epoch: 11, Training Loss: 0.7504464696560588, Validation Loss: 0.820787216935839
+06-22 10:22 2-hw.train.py INFO     Epoch: 12, Training Loss: 0.7442994351897921, Validation Loss: 0.7891043275594711
+06-22 10:23 2-hw.train.py INFO     Epoch: 13, Training Loss: 0.7443899640015194, Validation Loss: 0.807467886379787
+06-22 10:24 2-hw.train.py INFO     Epoch: 14, Training Loss: 0.7533165748630252, Validation Loss: 0.8189157098531723
+06-22 10:25 2-hw.train.py INFO     Epoch: 15, Training Loss: 0.7498788391905171, Validation Loss: 0.7944761642387935
+06-22 10:26 2-hw.train.py INFO     Epoch: 16, Training Loss: 0.7422816705490861, Validation Loss: 0.8034223083938871
+06-22 10:27 2-hw.train.py INFO     Epoch: 17, Training Loss: 0.7346273282808917, Validation Loss: 0.8200651832989284
+06-22 10:27 2-hw.train.py INFO     Epoch: 18, Training Loss: 0.7314899287053517, Validation Loss: 0.8419338677610669
+06-22 10:28 2-hw.train.py INFO     Epoch: 19, Training Loss: 0.7233996247606618, Validation Loss: 0.7947676181793213
+06-22 10:29 2-hw.train.py INFO     Epoch: 20, Training Loss: 0.7279308310576847, Validation Loss: 0.8205157773835319
+06-22 10:30 2-hw.train.py INFO     Epoch: 21, Training Loss: 0.7349579084132399, Validation Loss: 0.8127350083419255
+06-22 10:31 2-hw.train.py INFO     Epoch: 22, Training Loss: 0.7226250831569944, Validation Loss: 0.8169433559690203
+06-22 10:32 2-hw.train.py INFO     Epoch: 23, Training Loss: 0.7426172766302314, Validation Loss: 0.8139094476188932
+06-22 10:33 2-hw.train.py INFO     Epoch: 24, Training Loss: 0.721069875572409, Validation Loss: 0.8127999156713486
+06-22 10:34 2-hw.train.py INFO     Epoch: 25, Training Loss: 0.7228697756571429, Validation Loss: 0.8230573279517037
+06-22 10:34 2-hw.train.py INFO     Epoch: 26, Training Loss: 0.7241568618587085, Validation Loss: 0.8832563800471169
+06-22 10:35 2-hw.train.py INFO     Epoch: 27, Training Loss: 0.7523751253528255, Validation Loss: 0.8040166710104261
+06-22 10:36 2-hw.train.py INFO     Epoch: 28, Training Loss: 0.7252423406711647, Validation Loss: 0.8217090240546635
+06-22 10:37 2-hw.train.py INFO     Epoch: 29, Training Loss: 0.7346033155918121, Validation Loss: 0.8172988487141473
+06-22 10:38 2-hw.train.py INFO     Epoch: 30, Training Loss: 0.7339016874986035, Validation Loss: 0.8259767655815397
+06-22 10:39 2-hw.train.py INFO     Epoch: 31, Training Loss: 0.7195267198341233, Validation Loss: 0.8239608534744808
+06-22 10:40 2-hw.train.py INFO     Epoch: 32, Training Loss: 0.7166736737958023, Validation Loss: 0.8102320028202874
+06-22 10:41 2-hw.train.py INFO     Epoch: 33, Training Loss: 0.7064933313855103, Validation Loss: 0.8200293694223676
+06-22 10:42 2-hw.train.py INFO     Epoch: 34, Training Loss: 0.721322800964117, Validation Loss: 0.8194681406021118
+06-22 10:42 2-hw.train.py INFO     Epoch: 35, Training Loss: 0.7227514178625175, Validation Loss: 0.8115771519286292
+06-22 10:43 2-hw.train.py INFO     Epoch: 36, Training Loss: 0.7805623529212815, Validation Loss: 0.8456101481403623
+06-22 10:44 2-hw.train.py INFO     Epoch: 37, Training Loss: 0.7463158587259906, Validation Loss: 0.8369299003056118
+06-22 10:45 2-hw.train.py INFO     Epoch: 38, Training Loss: 0.7436091474124363, Validation Loss: 0.8689721822738647
+06-22 10:46 2-hw.train.py INFO     Epoch: 39, Training Loss: 0.7623908051422664, Validation Loss: 0.8478661371128899
+06-22 10:47 2-hw.train.py INFO     Epoch: 40, Training Loss: 0.7534442661064011, Validation Loss: 0.8133478483983448
+06-22 10:48 2-hw.train.py INFO     Epoch: 41, Training Loss: 0.7455099624182496, Validation Loss: 0.8390974359852927
+06-22 10:49 2-hw.train.py INFO     Epoch: 42, Training Loss: 0.7505187557211944, Validation Loss: 0.8449122714144843
+06-22 10:49 2-hw.train.py INFO     Epoch: 43, Training Loss: 0.7551043219864368, Validation Loss: 0.8168769925832748
+06-22 10:50 2-hw.train.py INFO     Epoch: 44, Training Loss: 0.7422030621341297, Validation Loss: 0.828490116766521
+06-22 10:51 2-hw.train.py INFO     Epoch: 45, Training Loss: 0.7353121835206237, Validation Loss: 0.8309748300484249
+06-22 10:52 2-hw.train.py INFO     Epoch: 46, Training Loss: 0.75254443234631, Validation Loss: 0.8276038212435586
+06-22 10:53 2-hw.train.py INFO     Epoch: 47, Training Loss: 0.767570821834462, Validation Loss: 0.8165832928248814
+06-22 10:54 2-hw.train.py INFO     Epoch: 48, Training Loss: 0.7430884694414479, Validation Loss: 0.8195306658744812
+06-22 10:55 2-hw.train.py INFO     Epoch: 49, Training Loss: 0.7382589541375637, Validation Loss: 0.8217820546456746
+06-22 10:56 2-hw.train.py INFO     Epoch: 50, Training Loss: 0.7777306357664722, Validation Loss: 0.848189943603107
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0.
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Sans' (DejaVuSans-BoldOblique.ttf) oblique normal bold normal>) = 1.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXSizeThreeSym' (STIXSizThreeSymReg.ttf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Sans' (DejaVuSans-Bold.ttf) normal normal bold normal>) = 0.33499999999999996
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXGeneral' (STIXGeneral.ttf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'cmmi10' (cmmi10.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXSizeFourSym' (STIXSizFourSymReg.ttf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXNonUnicode' (STIXNonUniBolIta.ttf) italic normal bold normal>) = 11.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-Bold.ttf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXNonUnicode' (STIXNonUni.ttf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXSizeFourSym' (STIXSizFourSymBol.ttf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Sans' (DejaVuSans-Oblique.ttf) oblique normal 400 normal>) = 1.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'cmsy10' (cmsy10.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Sans' (DejaVuSans.ttf) normal normal 400 normal>) = 0.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXNonUnicode' (STIXNonUniBol.ttf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'cmss10' (cmss10.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-Bold.ttf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXSizeTwoSym' (STIXSizTwoSymReg.ttf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXGeneral' (STIXGeneralBolIta.ttf) italic normal bold normal>) = 11.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'cmb10' (cmb10.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Serif Display' (DejaVuSerifDisplay.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXGeneral' (STIXGeneralItalic.ttf) italic normal 400 normal>) = 11.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'cmex10' (cmex10.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-BoldOblique.ttf) oblique normal bold normal>) = 11.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXNonUnicode' (STIXNonUniIta.ttf) italic normal 400 normal>) = 11.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXSizeFiveSym' (STIXSizFiveSymReg.ttf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-BoldItalic.ttf) italic normal bold normal>) = 11.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXSizeThreeSym' (STIXSizThreeSymBol.ttf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Serif' (DejaVuSerif.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXSizeTwoSym' (STIXSizTwoSymBol.ttf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'cmtt10' (cmtt10.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXSizeOneSym' (STIXSizOneSymBol.ttf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXSizeOneSym' (STIXSizOneSymReg.ttf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-Italic.ttf) italic normal 400 normal>) = 11.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Sans Display' (DejaVuSansDisplay.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'cmr10' (cmr10.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'STIXGeneral' (STIXGeneralBol.ttf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-Oblique.ttf) oblique normal 400 normal>) = 11.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'FontAwesome' (FontAwesome.otf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Mono' (LiberationMono-Italic.ttf) italic normal 400 normal>) = 11.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Sans' (LiberationSans-BoldItalic.ttf) italic normal bold normal>) = 11.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_AMS' (MathJax_AMS-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Serif' (LiberationSerif-Italic.ttf) italic normal 400 normal>) = 11.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Mono' (LiberationMono-BoldItalic.ttf) italic normal bold normal>) = 11.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_SansSerif' (MathJax_SansSerif-Italic.otf) italic normal 400 normal>) = 11.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Script' (MathJax_Script-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Main' (MathJax_Main-Italic.otf) italic normal 400 normal>) = 11.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Sans' (LiberationSans-Regular.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Size4' (MathJax_Size4-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Sans' (LiberationSans-Italic.ttf) italic normal 400 normal>) = 11.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Mono' (LiberationMono-Regular.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_WinIE6' (MathJax_WinIE6-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Size3' (MathJax_Size3-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Serif' (LiberationSerif-BoldItalic.ttf) italic normal bold normal>) = 11.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Serif' (LiberationSerif-Bold.ttf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-Bold.ttf) normal normal bold condensed>) = 10.535
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Serif' (LiberationSerif-Regular.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-BoldItalic.ttf) italic normal bold condensed>) = 11.535
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Size1' (MathJax_Size1-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Typewriter' (MathJax_Typewriter-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Vector-Bold' (MathJax_Vector-Bold.otf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'elusiveicons' (elusiveicons-webfont.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Main' (MathJax_Main-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Fraktur' (MathJax_Fraktur-Bold.otf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Math' (MathJax_Math-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'FontAwesome' (fontawesome-webfont.ttf) normal normal 400 normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Caligraphic' (MathJax_Caligraphic-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Vector' (MathJax_Vector-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Main' (MathJax_Main-Bold.otf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Mono' (LiberationMono-Bold.ttf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Caligraphic' (MathJax_Caligraphic-Bold.otf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Math' (MathJax_Math-BoldItalic.otf) italic normal bold normal>) = 11.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-Regular.ttf) normal normal 400 condensed>) = 10.25
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Sans' (LiberationSans-Bold.ttf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_SansSerif' (MathJax_SansSerif-Bold.otf) normal normal bold normal>) = 10.335
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Math' (MathJax_Math-Italic.otf) italic normal 400 normal>) = 11.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_SansSerif' (MathJax_SansSerif-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-Italic.ttf) italic normal 400 condensed>) = 11.25
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Fraktur' (MathJax_Fraktur-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_WinChrome' (MathJax_WinChrome-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: score(<Font 'MathJax_Size2' (MathJax_Size2-Regular.otf) normal normal regular normal>) = 10.05
+06-22 10:56 matplotlib.font_manager DEBUG    findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('/home/nxshen/anaconda3/envs/ml/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000.
