@@ -10,7 +10,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 # 山立漫畫 - 無良公會
 
-local_path = 'H:\無良工會'
+local_path = 'H:\無良公會'
 filename = 1
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36"}
 # headers = {'User-Agent':str(ua.chrome)}
